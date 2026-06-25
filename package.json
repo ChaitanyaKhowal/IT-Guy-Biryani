@@ -1,0 +1,13 @@
+{
+  "name": "it-guy-biryani-website",
+  "version": "1.0.0",
+  "description": "Premium cloud kitchen website with IT-level precision.",
+  "main": "js/main.js",
+  "scripts": {
+    "build:css": "tailwindcss -i ./css/tailwind.css -o ./assets/css/main.min.css --minify",
+    "watch:css": "tailwindcss -i ./css/tailwind.css -o ./assets/css/main.min.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+}

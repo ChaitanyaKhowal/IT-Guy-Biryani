@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>IT Guy Biryani | Homemade Biryani Crafted with Precision</title>
+  <meta name="description" content="Hygienic, premium homemade chicken biryani prepared with precision by a software engineer. Sourced organic spices, fresh chicken, and aged Basmati. Serving Hinjawadi Phase 1 & Blue Ridge, Pune.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700&display=swap" rel="stylesheet">
+  
+  <!-- Compiled Tailwind CSS Stylesheet -->
+  <link rel="stylesheet" href="./assets/css/main.min.css">
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FoodEstablishment",
+    "name": "IT Guy Biryani",
+    "image": "https://itguybiryani.com/assets/images/hero-biryani.webp",
+    "priceRange": "$$",
+    "telephone": "+917276336896",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Blue Ridge Society, Hinjawadi Phase 1",
+      "addressLocality": "Pune",
+      "addressRegion": "MH",
+      "postalCode": "411057",
+      "addressCountry": "IN"
+    },
+    "menu": "https://itguybiryani.com/#menu",
+    "servesCuisine": "Indian, Biryani",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "18:00",
+      "closes": "23:59"
+    }
+  }
+  </script>
+</head>
+<body class="bg-obsidian text-brownText-body font-body antialiased selection:bg-orange selection:text-white overflow-x-hidden">
+
+  <!-- Navigation Bar -->
+  <header id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300">
+    <nav class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="#" class="font-sans text-xl font-bold tracking-tight text-brownText-heading flex items-center gap-2">
+        <span class="text-orange font-normal">{</span> IT Guy Biryani <span class="text-orange font-normal">}</span>
+      </a>
+      
+      <!-- Desktop Navigation Links -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#about" class="text-sm font-semibold text-brownText-muted hover:text-orange transition-colors">Our Story</a>
+        <a href="#why-choose-us" class="text-sm font-semibold text-brownText-muted hover:text-orange transition-colors">The Recipe Precision</a>
+        <a href="#menu" class="text-sm font-semibold text-brownText-muted hover:text-orange transition-colors">Our Menu</a>
+        <a href="#ordering-process" class="text-sm font-semibold text-brownText-muted hover:text-orange transition-colors">How to Order</a>
+        <a href="#testimonials" class="text-sm font-semibold text-brownText-muted hover:text-orange transition-colors">Reviews</a>
+        <a href="#faq" class="text-sm font-semibold text-brownText-muted hover:text-orange transition-colors">FAQs</a>
+        <a href="#contact" class="text-sm font-semibold text-brownText-muted hover:text-orange transition-colors">Contact Us</a>
+      </div>
+      
+      <!-- Desktop Navigation Action CTA -->
+      <div class="hidden md:block">
+        <a href="#menu" class="btn-secondary py-2 px-5 text-xs">Order Now</a>
+      </div>
+      
+      <!-- Mobile Menu Hamburger Button -->
+      <button id="mobile-menu-btn" class="md:hidden p-2 text-brownText-heading hover:text-orange focus:outline-none" aria-label="Toggle Navigation Menu">
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path id="menu-icon-path" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </nav>
+    
+    <!-- Mobile Navigation Drawer Panel -->
+    <div id="mobile-menu-drawer" class="hidden md:hidden fixed top-20 left-0 w-full bg-white border-b border-borderGray shadow-nav transition-all duration-300">
+      <div class="flex flex-col p-6 gap-6">
+        <a href="#about" class="text-base font-semibold text-brownText-muted hover:text-orange transition-colors mobile-link">Our Story</a>
+        <a href="#why-choose-us" class="text-base font-semibold text-brownText-muted hover:text-orange transition-colors mobile-link">The Recipe Precision</a>
+        <a href="#menu" class="text-base font-semibold text-brownText-muted hover:text-orange transition-colors mobile-link">Our Menu</a>
+        <a href="#ordering-process" class="text-base font-semibold text-brownText-muted hover:text-orange transition-colors mobile-link">How to Order</a>
+        <a href="#testimonials" class="text-base font-semibold text-brownText-muted hover:text-orange transition-colors mobile-link">Reviews</a>
+        <a href="#faq" class="text-base font-semibold text-brownText-muted hover:text-orange transition-colors mobile-link">FAQs</a>
+        <a href="#contact" class="text-base font-semibold text-brownText-muted hover:text-orange transition-colors mobile-link">Contact Us</a>
+        <a href="#menu" class="btn-primary w-full text-center py-3.5 mobile-link">Order Now</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 01. Hero Section -->
+    <section id="hero" class="relative pt-32 pb-20 md:py-40 px-6 max-w-7xl mx-auto min-h-screen grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-7 flex flex-col items-start gap-6">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-success/10 border border-success/20 text-success text-xs font-semibold uppercase tracking-wider">
+          <span class="w-2 h-2 rounded-full bg-success animate-pulse"></span>
+          Freshly Prepared & Available Today
+        </div>
+        <h1 class="text-4xl md:text-6xl font-bold leading-tight tracking-tight text-brownText-heading">
+          Precision Crafted.<br/>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-light to-orange-dark">Slow-Cooked Homemade Taste.</span>
+        </h1>
+        <p class="text-base md:text-lg text-brownText-body max-w-xl">
+          We apply clean, process-driven discipline to the traditional art of slow-cooking. Made fresh to order by a software engineer in Hinjawadi, using premium ingredients. Only 10 pots cooked daily.
+        </p>
+        
+        <!-- Subtle details panel matching premium restaurant indicators -->
+        <div class="grid grid-cols-3 gap-6 w-full max-w-lg p-6 my-2 glass-card text-xs">
+          <div>
+            <div class="text-brownText-muted mb-1 uppercase tracking-wider font-semibold text-[10px]">Daily Capacity</div>
+            <div class="text-sm font-bold text-brownText-heading">10 Pots Max</div>
+          </div>
+          <div>
+            <div class="text-brownText-muted mb-1 uppercase tracking-wider font-semibold text-[10px]">Preparation Time</div>
+            <div class="text-sm font-bold text-brownText-heading">3-Hour Advance</div>
+          </div>
+          <div>
+            <div class="text-brownText-muted mb-1 uppercase tracking-wider font-semibold text-[10px]">Delivery Area</div>
+            <div class="text-sm font-bold text-brownText-heading">Hinjawadi Phase 1</div>
+          </div>
+        </div>
+        
+        <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mt-4">
+          <a href="#menu" class="btn-primary">Order Now</a>
+          <a href="#about" class="btn-secondary">Meet The Founder</a>
+        </div>
+      </div>
+      <div class="lg:col-span-5 w-full flex justify-center">
+        <!-- Visual Media Frame Container -->
+        <div class="w-full max-w-md aspect-square relative rounded-2xl overflow-hidden border border-borderGray shadow-card">
+          <!-- Real food visual placeholders -->
+          <div class="w-full h-full bg-white flex items-center justify-center flex-col p-8 text-center">
+            <svg class="w-16 h-16 text-orange mb-4 opacity-75" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707-.707M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <h3 class="text-lg font-bold text-brownText-heading mb-2">Fresh Sealed Clay Pots</h3>
+            <p class="text-xs text-brownText-body">Aromatic basmati rice and premium marinated chicken slow-cooked under dough seals.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02. About Section (Founder Story) -->
+    <section id="about" class="py-24 px-6 border-t border-borderGray bg-altBg">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7 flex flex-col items-start gap-6">
+          <div class="font-sans text-xs uppercase tracking-wider text-orange font-bold">01 // MEET THE FOUNDER</div>
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-brownText-heading">How an IT Professional Discovered the Perfect Recipe</h2>
+          <div class="space-y-4 text-brownText-body text-base">
+            <p>
+              I spend my days writing code and maintaining application processes. In software, precision is everything—a single missing character can break an entire system.
+            </p>
+            <p>
+              When I began cooking at home, I realized the same logic applies to the kitchen. Traditional food is an art, but consistency requires structural precision. Instead of scaling up to serve hundreds, I choose to cook in small batches.
+            </p>
+            <p>
+              We select every ingredient carefully: organic whole spices, premium aged Basmati rice, fresh farm-reared chicken, and clean cold-pressed oils. Our process is transparent, hygienic, and calculated to deliver consistent flavor every time.
+            </p>
+          </div>
+          <div class="border-l-2 border-orange pl-4 my-2 italic text-brownText-heading font-sans text-sm">
+            "Cooking requires precision. Flavor requires patience. Both must be balanced."
+          </div>
+          <div class="mt-2">
+            <div class="font-bold text-brownText-heading text-base">Rushikesh Dandge</div>
+            <div class="text-xs text-brownText-muted font-semibold">Founder & Home Chef</div>
+          </div>
+        </div>
+        <div class="lg:col-span-5 w-full flex justify-center">
+          <div class="w-full max-w-sm aspect-[3/4] relative rounded-2xl overflow-hidden border border-borderGray bg-white shadow-card flex items-center justify-center p-8 text-center">
+            <div class="z-20">
+              <svg class="w-12 h-12 text-orange/50 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+              </svg>
+              <h4 class="text-sm font-semibold text-brownText-heading mb-1">Our Home Kitchen</h4>
+              <p class="text-xs text-brownText-body">Rushikesh preparing fresh clay-pot orders in a clean, hygienic environment.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03. Why Choose Us Section -->
+    <section id="why-choose-us" class="py-24 px-6 border-t border-borderGray">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <div class="font-sans text-xs uppercase tracking-wider text-orange font-bold mb-3">02 // OUR COMMITMENT</div>
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-brownText-heading">The Precision Behind the Taste</h2>
+          <p class="text-brownText-body mt-2">Every step of our process is designed to ensure maximum hygiene, freshness, and authentic homemade flavor.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Card 1 -->
+          <div class="glass-card p-8 hover:border-orange/50 transition-all duration-300 group">
+            <div class="w-12 h-12 rounded-xl bg-orange/10 border border-orange/20 flex items-center justify-center text-orange font-sans text-lg font-bold mb-6 group-hover:bg-orange group-hover:text-white transition-all">
+              01
+            </div>
+            <h3 class="text-xl font-bold text-brownText-heading mb-3">Clean Sourcing</h3>
+            <p class="text-sm text-brownText-body leading-relaxed">
+              We source organic whole spices, premium aged Basmati rice, and fresh chicken. No artificial colorings or low-grade oils.
+            </p>
+          </div>
+          <!-- Card 2 -->
+          <div class="glass-card p-8 hover:border-orange/50 transition-all duration-300 group">
+            <div class="w-12 h-12 rounded-xl bg-orange/10 border border-orange/20 flex items-center justify-center text-orange font-sans text-lg font-bold mb-6 group-hover:bg-orange group-hover:text-white transition-all">
+              02
+            </div>
+            <h3 class="text-xl font-bold text-brownText-heading mb-3">Strict Daily Limit</h3>
+            <p class="text-sm text-brownText-body leading-relaxed">
+              We prepare only 10 pots a day. Limiting our quantities ensures we can focus completely on flavor and texture in every pot.
+            </p>
+          </div>
+          <!-- Card 3 -->
+          <div class="glass-card p-8 hover:border-orange/50 transition-all duration-300 group">
+            <div class="w-12 h-12 rounded-xl bg-orange/10 border border-orange/20 flex items-center justify-center text-orange font-sans text-lg font-bold mb-6 group-hover:bg-orange group-hover:text-white transition-all">
+              03
+            </div>
+            <h3 class="text-xl font-bold text-brownText-heading mb-3">Freshly Prepared</h3>
+            <p class="text-sm text-brownText-body leading-relaxed">
+              We do not pre-cook or reheat meals. Your order is cooked from scratch and delivered fresh from the clay pot.
+            </p>
+          </div>
+          <!-- Card 4 -->
+          <div class="glass-card p-8 hover:border-orange/50 transition-all duration-300 group">
+            <div class="w-12 h-12 rounded-xl bg-orange/10 border border-orange/20 flex items-center justify-center text-orange font-sans text-lg font-bold mb-6 group-hover:bg-orange group-hover:text-white transition-all">
+              04
+            </div>
+            <h3 class="text-xl font-bold text-brownText-heading mb-3">Hygienic Home Kitchen</h3>
+            <p class="text-sm text-brownText-body leading-relaxed">
+              Prepared in a home environment that follows strict cleanliness protocols, ensuring a clean cooking process from start to finish.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04. Menu Section -->
+    <section id="menu" class="py-24 px-6 border-t border-borderGray bg-altBg">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <div class="font-sans text-xs uppercase tracking-wider text-orange font-bold mb-3">03 // OUR SIGNATURE RECIPES</div>
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-brownText-heading">Our Menu</h2>
+          <p class="text-brownText-body mt-2">Select your portion size and spice preference to order.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Item 1: Chicken Dum Biryani -->
+          <div class="glass-card overflow-hidden flex flex-col" data-menu-item data-prices='{"500g": 600, "1Kg": 1200}'>
+            <div class="aspect-[4/3] w-full bg-altBg border-b border-borderGray flex items-center justify-center p-6 text-center relative">
+              <span class="absolute top-4 left-4 font-sans text-xs bg-orange/10 border border-orange/30 text-orange px-2.5 py-1 rounded font-semibold uppercase">CLAY POT DUM</span>
+              <svg class="w-12 h-12 text-brownText-muted/30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <div class="p-6 flex flex-col flex-grow gap-4">
+              <div class="flex justify-between items-start">
+                <h3 class="text-xl font-bold text-brownText-heading">Chicken Dum Biryani</h3>
+                <span class="text-sm font-bold text-orange font-sans animate-pulse" data-price-display>₹600</span>
+              </div>
+              <p class="text-xs text-brownText-body leading-relaxed flex-grow">
+                Classic slow-cooked biryani using aged basmati, premium chicken, organic whole spices, and pure ghee. Cooked in clay pots.
+              </p>
+              
+              <!-- Toggles / Specifications -->
+              <div class="space-y-3 pt-2">
+                <div class="flex items-center justify-between text-xs">
+                  <span class="text-brownText-body">Portion Size</span>
+                  <div class="flex bg-obsidian border border-borderGray rounded p-0.5">
+                    <button class="px-3 py-1 rounded text-xs font-semibold active bg-brownText-body text-white" data-portion-toggle data-portion="500g">500g</button>
+                    <button class="px-3 py-1 rounded text-xs font-semibold text-brownText-muted" data-portion-toggle data-portion="1Kg">1Kg</button>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between text-xs">
+                  <span class="text-brownText-body">Spice Index</span>
+                  <span class="text-brownText-heading font-semibold">Medium</span>
+                </div>
+              </div>
+              
+              <button class="btn-primary w-full mt-4" data-order-button data-item="Chicken Dum Biryani">Order Now</button>
+            </div>
+          </div>
+          
+          <!-- Item 2: Chicken Boneless Biryani -->
+          <div class="glass-card overflow-hidden flex flex-col" data-menu-item data-prices='{"500g": 650, "1Kg": 1300}'>
+            <div class="aspect-[4/3] w-full bg-altBg border-b border-borderGray flex items-center justify-center p-6 text-center relative">
+              <span class="absolute top-4 left-4 font-sans text-xs bg-orange/10 border border-orange/30 text-orange px-2.5 py-1 rounded font-semibold uppercase">BONELESS FLAVOR</span>
+              <svg class="w-12 h-12 text-brownText-muted/30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <div class="p-6 flex flex-col flex-grow gap-4">
+              <div class="flex justify-between items-start">
+                <h3 class="text-xl font-bold text-brownText-heading">Chicken Boneless Biryani</h3>
+                <span class="text-sm font-bold text-orange font-sans animate-pulse" data-price-display>₹650</span>
+              </div>
+              <p class="text-xs text-brownText-body leading-relaxed flex-grow">
+                Marinated boneless chicken pieces layered with fragrant Basmati rice and fresh herbs, cooked to order.
+              </p>
+              
+              <!-- Toggles / Specifications -->
+              <div class="space-y-3 pt-2">
+                <div class="flex items-center justify-between text-xs">
+                  <span class="text-brownText-body">Portion Size</span>
+                  <div class="flex bg-obsidian border border-borderGray rounded p-0.5">
+                    <button class="px-3 py-1 rounded text-xs font-semibold active bg-brownText-body text-white" data-portion-toggle data-portion="500g">500g</button>
+                    <button class="px-3 py-1 rounded text-xs font-semibold text-brownText-muted" data-portion-toggle data-portion="1Kg">1Kg</button>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between text-xs">
+                  <span class="text-brownText-body">Spice Index</span>
+                  <span class="text-brownText-heading font-semibold">Medium / Spicy</span>
+                </div>
+              </div>
+              
+              <button class="btn-primary w-full mt-4" data-order-button data-item="Chicken Boneless Biryani">Order Now</button>
+            </div>
+          </div>
+          
+          <!-- Item 3: Chicken Fry Piece Biryani -->
+          <div class="glass-card overflow-hidden flex flex-col" data-menu-item data-prices='{"500g": 650, "1Kg": 1300}'>
+            <div class="aspect-[4/3] w-full bg-altBg border-b border-borderGray flex items-center justify-center p-6 text-center relative">
+              <span class="absolute top-4 left-4 font-sans text-xs bg-orange/10 border border-orange/30 text-orange px-2.5 py-1 rounded font-semibold uppercase">CRISPY FRY PIECE</span>
+              <svg class="w-12 h-12 text-brownText-muted/30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <div class="p-6 flex flex-col flex-grow gap-4">
+              <div class="flex justify-between items-start">
+                <h3 class="text-xl font-bold text-brownText-heading">Chicken Fry Piece Biryani</h3>
+                <span class="text-sm font-bold text-orange font-sans animate-pulse" data-price-display>₹650</span>
+              </div>
+              <p class="text-xs text-brownText-body leading-relaxed flex-grow">
+                Spiced, crispy fried chicken pieces layered over aromatic, slow-cooked dum biryani rice.
+              </p>
+              
+              <!-- Toggles / Specifications -->
+              <div class="space-y-3 pt-2">
+                <div class="flex items-center justify-between text-xs">
+                  <span class="text-brownText-body">Portion Size</span>
+                  <div class="flex bg-obsidian border border-borderGray rounded p-0.5">
+                    <button class="px-3 py-1 rounded text-xs font-semibold active bg-brownText-body text-white" data-portion-toggle data-portion="500g">500g</button>
+                    <button class="px-3 py-1 rounded text-xs font-semibold text-brownText-muted" data-portion-toggle data-portion="1Kg">1Kg</button>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between text-xs">
+                  <span class="text-brownText-body">Spice Index</span>
+                  <span class="text-brownText-heading font-semibold">Spicy</span>
+                </div>
+              </div>
+              
+              <button class="btn-primary w-full mt-4" data-order-button data-item="Chicken Fry Piece Biryani">Order Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05. Ordering Process Section -->
+    <section id="ordering-process" class="py-24 px-6 border-t border-borderGray">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <div class="font-sans text-xs uppercase tracking-wider text-orange font-bold mb-3">04 // SIMPLE SCHEDULING</div>
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-brownText-heading">How to Order</h2>
+          <p class="text-brownText-body mt-2">Because we cook in small batches, we require advance notice to prepare your meal.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
+          <!-- Step 1 -->
+          <div class="flex flex-col items-center text-center relative z-10 animate-fade-in">
+            <div class="w-16 h-16 rounded-full bg-white border border-borderGray shadow-card flex items-center justify-center text-orange font-sans text-lg font-bold mb-6">
+              1
+            </div>
+            <h3 class="text-xl font-bold text-brownText-heading mb-2">Select Portion</h3>
+            <p class="text-sm text-brownText-body">
+              Choose your portion size and spice preferences from our menu, then click the Order button to configure details.
+            </p>
+          </div>
+          <!-- Step 2 -->
+          <div class="flex flex-col items-center text-center relative z-10">
+            <div class="w-16 h-16 rounded-full bg-white border border-borderGray shadow-card flex items-center justify-center text-orange font-sans text-lg font-bold mb-6">
+              2
+            </div>
+            <h3 class="text-xl font-bold text-brownText-heading mb-2">Enter Delivery Info</h3>
+            <p class="text-sm text-brownText-body">
+              Provide your name, WhatsApp number, and address in our ordering panel. Your choices are compiled into a WhatsApp message.
+            </p>
+          </div>
+          <!-- Step 3 -->
+          <div class="flex flex-col items-center text-center relative z-10">
+            <div class="w-16 h-16 rounded-full bg-white border border-borderGray shadow-card flex items-center justify-center text-orange font-sans text-lg font-bold mb-6">
+              3
+            </div>
+            <h3 class="text-xl font-bold text-brownText-heading mb-2">Fresh Delivery</h3>
+            <p class="text-sm text-brownText-body">
+              Once verified on WhatsApp, we prepare your order and deliver it fresh from the clay pot directly to your home.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06. Testimonials Section -->
+    <section id="testimonials" class="py-24 px-6 border-t border-borderGray bg-altBg">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <div class="font-sans text-xs uppercase tracking-wider text-orange font-bold mb-3">05 // COMMUNITY REVIEWS</div>
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-brownText-heading">Customer Reviews</h2>
+          <p class="text-brownText-body mt-2">What local residents and software engineers in Hinjawadi say about us.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Card 1 -->
+          <div class="glass-card p-8 flex flex-col gap-4">
+            <div class="flex text-orange gap-1 text-sm font-sans">★★★★★</div>
+            <p class="text-sm text-brownText-body italic leading-relaxed">
+              "The precision and attention to detail shows. Every grain is separate and flavor profile is balanced. Best homemade biryani in Blue Ridge."
+            </p>
+            <div class="border-t border-borderGray pt-4 flex justify-between items-center text-xs font-sans">
+              <span class="font-bold text-brownText-heading">Anirban S.</span>
+              <span class="text-brownText-muted font-semibold">Tower T8, Blue Ridge</span>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="glass-card p-8 flex flex-col gap-4">
+            <div class="flex text-orange gap-1 text-sm font-sans">★★★★★</div>
+            <p class="text-sm text-brownText-body italic leading-relaxed">
+              "Ordering 3 hours in advance is completely worth it. Freshly cooked biryani delivered hot. The hygiene aspect is fully clear."
+            </p>
+            <div class="border-t border-borderGray pt-4 flex justify-between items-center text-xs font-sans">
+              <span class="font-bold text-brownText-heading">Priya K.</span>
+              <span class="text-brownText-muted font-semibold">Infosys Phase 1</span>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="glass-card p-8 flex flex-col gap-4">
+            <div class="flex text-orange gap-1 text-sm font-sans">★★★★★</div>
+            <p class="text-sm text-brownText-body italic leading-relaxed">
+              "Excellent packaging and premium taste. Highly consistent quality. Glad someone is applying engineering levels of precision to cooking."
+            </p>
+            <div class="border-t border-borderGray pt-4 flex justify-between items-center text-xs font-sans">
+              <span class="font-bold text-brownText-heading">Rahul D.</span>
+              <span class="text-brownText-muted font-semibold">Tower T14, Blue Ridge</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07. FAQ Section -->
+    <section id="faq" class="py-24 px-6 border-t border-borderGray">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <div class="font-sans text-xs uppercase tracking-wider text-orange font-bold mb-3">06 // FREQUENTLY ASKED QUESTIONS</div>
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-brownText-heading">Frequently Asked Questions</h2>
+          <p class="text-brownText-body mt-2">Answers to common questions about ingredients, booking, and delivery.</p>
+        </div>
+        
+        <div class="space-y-4" data-faq-accordion>
+          <!-- Item 1 -->
+          <div class="border border-borderGray rounded-xl bg-white shadow-card overflow-hidden">
+            <button class="w-full p-6 text-left flex justify-between items-center font-bold text-brownText-heading focus:outline-none" data-faq-toggle>
+              <span>Why do you require 3 hours advance booking?</span>
+              <svg class="w-5 h-5 text-brownText-muted transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div class="px-6 pb-6 text-sm text-brownText-body hidden" data-faq-content>
+              We cook every order from scratch. Your biryani is prepared only after slot verification. We do not pre-cook, reheat, or store items.
+            </div>
+          </div>
+          
+          <!-- Item 2 -->
+          <div class="border border-borderGray rounded-xl bg-white shadow-card overflow-hidden">
+            <button class="w-full p-6 text-left flex justify-between items-center font-bold text-brownText-heading focus:outline-none" data-faq-toggle>
+              <span>Why do you limit production to 10 pots a day?</span>
+              <svg class="w-5 h-5 text-brownText-muted transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div class="px-6 pb-6 text-sm text-brownText-body hidden" data-faq-content>
+              We prioritize consistency, authentic taste, and absolute hygiene. Limiting our daily runs ensures every clay pot is personally monitored.
+            </div>
+          </div>
+          
+          <!-- Item 3 -->
+          <div class="border border-borderGray rounded-xl bg-white shadow-card overflow-hidden">
+            <button class="w-full p-6 text-left flex justify-between items-center font-bold text-brownText-heading focus:outline-none" data-faq-toggle>
+              <span>What ingredients are used?</span>
+              <svg class="w-5 h-5 text-brownText-muted transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div class="px-6 pb-6 text-sm text-brownText-body hidden" data-faq-content>
+              Only premium ingredients: organic spices, premium aged Basmati rice, cold-pressed sunflower oils, clean dairy ghee, and hormone-free chicken.
+            </div>
+          </div>
+          
+          <!-- Item 4 -->
+          <div class="border border-borderGray rounded-xl bg-white shadow-card overflow-hidden">
+            <button class="w-full p-6 text-left flex justify-between items-center font-bold text-brownText-heading focus:outline-none" data-faq-toggle>
+              <span>What are your delivery locations?</span>
+              <svg class="w-5 h-5 text-brownText-muted transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div class="px-6 pb-6 text-sm text-brownText-body hidden" data-faq-content>
+              Currently, we deliver within Blue Ridge Society and immediate regions in Hinjawadi Phase 1, Pune. Future expansions will target Wakad and Baner.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 08. Contact Section -->
+    <section id="contact" class="py-24 px-6 border-t border-borderGray bg-altBg">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <!-- Delivery info and details -->
+        <div class="lg:col-span-5 flex flex-col items-start gap-6">
+          <div class="font-sans text-xs uppercase tracking-wider text-orange font-bold">07 // SUPPORT SERVICES</div>
+          <h2 class="text-3xl font-bold tracking-tight text-brownText-heading">Contact Us</h2>
+          <p class="text-brownText-body text-sm md:text-base">
+            Have a bulk order or queries about our scheduling? Contact us directly or view our operational parameters.
+          </p>
+          <div class="space-y-4 w-full text-sm font-sans">
+            <div class="p-4 border border-borderGray rounded-lg bg-white shadow-card">
+              <div class="text-brownText-muted mb-1 font-semibold text-[10px] tracking-wider uppercase">Operating Hours</div>
+              <div class="text-brownText-heading font-semibold">6:00 PM – 12:00 AM // Daily</div>
+            </div>
+            <div class="p-4 border border-borderGray rounded-lg bg-white shadow-card">
+              <div class="text-brownText-muted mb-1 font-semibold text-[10px] tracking-wider uppercase">Mobile / WhatsApp</div>
+              <div class="text-brownText-heading font-semibold">+91 7276336896</div>
+            </div>
+            <div class="p-4 border border-borderGray rounded-lg bg-white shadow-card">
+              <div class="text-brownText-muted mb-1 font-semibold text-[10px] tracking-wider uppercase">Kitchen Location</div>
+              <div class="text-brownText-heading font-semibold">Blue Ridge Society, Hinjawadi Phase 1, Pune</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Contact Form -->
+        <div class="lg:col-span-7">
+          <form id="contact-form" class="glass-card p-8 flex flex-col gap-6" novalidate>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label for="contact-name" class="block text-xs font-sans font-semibold text-brownText-muted mb-2">NAME</label>
+                <input type="text" id="contact-name" class="w-full bg-obsidian border border-borderGray rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-orange focus:ring-1 focus:ring-orange transition-all text-brownText-heading" placeholder="Enter Full Name" required>
+                <div class="text-xs text-alert mt-1 hidden" id="name-error">Please enter your name.</div>
+              </div>
+              <div>
+                <label for="contact-mobile" class="block text-xs font-sans font-semibold text-brownText-muted mb-2">MOBILE</label>
+                <input type="tel" id="contact-mobile" class="w-full bg-obsidian border border-borderGray rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-orange focus:ring-1 focus:ring-orange transition-all text-brownText-heading" placeholder="10-Digit Mobile Number" required>
+                <div class="text-xs text-alert mt-1 hidden" id="mobile-error">Please enter a valid 10-digit number.</div>
+              </div>
+            </div>
+            <div>
+              <label for="contact-message" class="block text-xs font-sans font-semibold text-brownText-muted mb-2">MESSAGE / DETAILS</label>
+              <textarea id="contact-message" rows="4" class="w-full bg-obsidian border border-borderGray rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-orange focus:ring-1 focus:ring-orange transition-all text-brownText-heading" placeholder="Tell us about your requirements (e.g. bulk order requirements)" required></textarea>
+              <div class="text-xs text-alert mt-1 hidden" id="message-error">Please fill in your message details.</div>
+            </div>
+            <button type="submit" class="btn-primary self-start">Submit Details</button>
+            <div class="text-sm text-success hidden font-semibold" id="form-success">Details compiled successfully. Opening WhatsApp connection...</div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Checkout/Reservation Drawer Panel overlay component -->
+  <div id="order-drawer" class="fixed inset-0 z-50 overflow-hidden hidden" aria-labelledby="drawer-title" role="dialog" aria-modal="true">
+    <div class="absolute inset-0 bg-obsidian/75 backdrop-blur-sm transition-opacity" id="drawer-overlay"></div>
+    <div class="absolute inset-y-0 right-0 max-w-full flex pl-10">
+      <div class="w-screen max-w-md">
+        <div class="h-full flex flex-col bg-white border-l border-borderGray shadow-xl overflow-y-scroll">
+          <div class="flex-1 py-6 overflow-y-auto px-6">
+            <div class="flex items-start justify-between border-b border-borderGray/50 pb-4">
+              <h2 class="text-lg font-bold text-brownText-heading font-sans uppercase tracking-wide" id="drawer-title">Configure Order</h2>
+              <button type="button" class="text-brownText-muted hover:text-orange focus:outline-none" id="close-drawer-btn">
+                <span class="sr-only">Close panel</span>
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            
+            <div class="mt-6 flex flex-col gap-6">
+              <div class="p-4 rounded-lg bg-obsidian border border-borderGray text-xs font-sans">
+                <div class="text-brownText-muted mb-1 font-semibold uppercase tracking-wider text-[10px]">Selected Item</div>
+                <div class="text-brownText-heading font-bold text-sm" id="drawer-item-name">Chicken Dum Biryani</div>
+                <div class="flex justify-between mt-2 pt-2 border-t border-borderGray/50">
+                  <span class="text-brownText-body">Portion Size</span>
+                  <span class="text-brownText-heading font-bold" id="drawer-item-portion">500g</span>
+                </div>
+                <div class="flex justify-between mt-1">
+                  <span class="text-brownText-body">Total Cost</span>
+                  <span class="text-orange font-bold text-sm" id="drawer-item-cost">₹600</span>
+                </div>
+              </div>
+              
+              <!-- Allocation specifications Form parameters -->
+              <form id="drawer-form" class="flex flex-col gap-4" novalidate>
+                <div>
+                  <label for="drawer-name" class="block text-xs font-sans font-semibold text-brownText-muted mb-1">NAME</label>
+                  <input type="text" id="drawer-name" class="w-full bg-obsidian border border-borderGray rounded px-3 py-2 text-sm focus:outline-none focus:border-orange transition-all text-brownText-heading" placeholder="Enter Full Name" required>
+                  <div class="text-xs text-alert mt-1 hidden" id="drawer-name-error">Name parameter required.</div>
+                </div>
+                <div>
+                  <label for="drawer-mobile" class="block text-xs font-sans font-semibold text-brownText-muted mb-1">MOBILE (WHATSAPP)</label>
+                  <input type="tel" id="drawer-mobile" class="w-full bg-obsidian border border-borderGray rounded px-3 py-2 text-sm focus:outline-none focus:border-orange transition-all text-brownText-heading" placeholder="10-Digit WhatsApp Number" required>
+                  <div class="text-xs text-alert mt-1 hidden" id="drawer-mobile-error">Valid mobile prefix required.</div>
+                </div>
+                <div>
+                  <label for="drawer-address" class="block text-xs font-sans font-semibold text-brownText-muted mb-1">DELIVERY_ADDRESS</label>
+                  <input type="text" id="drawer-address" class="w-full bg-obsidian border border-borderGray rounded px-3 py-2 text-sm focus:outline-none focus:border-orange transition-all text-brownText-heading" placeholder="Apartment, Tower, Block" required>
+                  <div class="text-xs text-alert mt-1 hidden" id="drawer-address-error">Address parameters required.</div>
+                </div>
+                <div>
+                  <label for="drawer-time" class="block text-xs font-sans font-semibold text-brownText-muted mb-1">PREFERRED_DELIVERY_TIME</label>
+                  <select id="drawer-time" class="w-full bg-obsidian border border-borderGray rounded px-3 py-2 text-sm focus:outline-none focus:border-orange transition-all text-brownText-heading" required>
+                    <option value="" disabled selected>Select delivery slot</option>
+                    <option value="6:30 PM">6:30 PM</option>
+                    <option value="7:30 PM">7:30 PM</option>
+                    <option value="8:30 PM">8:30 PM</option>
+                    <option value="9:30 PM">9:30 PM</option>
+                    <option value="10:30 PM">10:30 PM</option>
+                  </select>
+                  <div class="text-xs text-alert mt-1 hidden" id="drawer-time-error">Please select a delivery slot.</div>
+                </div>
+                <div class="text-xs text-brownText-body leading-relaxed mt-2 font-sans">
+                  * All orders require a minimum 3-hour booking cycle. Direct payment request will be sent on WhatsApp.
+                </div>
+                <button type="submit" class="btn-primary w-full mt-4">Place Order on WhatsApp</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer id="footer" class="border-t border-borderGray bg-white py-16 px-6 shadow-nav">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+      <div class="flex flex-col items-center md:items-start gap-2">
+        <a href="#" class="font-sans text-lg font-bold tracking-tight text-brownText-heading">
+          <span class="text-orange font-normal">{</span> IT Guy Biryani <span class="text-orange font-normal">}</span>
+        </a>
+        <p class="text-xs text-brownText-muted font-semibold">Homemade Biryani Crafted with Precision</p>
+      </div>
+      
+      <!-- Footer details navigation parameters -->
+      <div class="flex flex-wrap justify-center gap-6 text-xs text-brownText-muted">
+        <a href="#about" class="hover:text-orange transition-colors font-semibold">Our Story</a>
+        <a href="#why-choose-us" class="hover:text-orange transition-colors font-semibold">Why Precision</a>
+        <a href="#menu" class="hover:text-orange transition-colors font-semibold">Our Menu</a>
+        <a href="#ordering-process" class="hover:text-orange transition-colors font-semibold">How to Order</a>
+        <a href="#contact" class="hover:text-orange transition-colors font-semibold">Contact Us</a>
+      </div>
+      
+      <!-- Developer signature layout -->
+      <div class="text-center md:text-right font-mono text-[10px] text-brownText-muted">
+        <div>© 2026 IT Guy Biryani. All Rights Reserved.</div>
+        <div class="mt-1">
+          <span class="text-orange font-normal">[</span> RUNTIME_DESIGN: <span class="text-brownText-heading hover:text-orange cursor-pointer">ANTIGRAVITY_SYSTEMS</span> <span class="text-orange">]</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>
