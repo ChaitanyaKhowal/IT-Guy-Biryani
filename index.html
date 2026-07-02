@@ -46,6 +46,11 @@
 
   <!-- Premium Cinematic Intro Loader -->
   <div id="intro-loader" class="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#000000] transition-opacity duration-1000 ease-in-out">
+    <!-- Skip button for returning visits (positioned elegantly in top corner) -->
+    <button id="skip-loader-btn" class="absolute top-6 right-6 z-[110] px-4 py-2 border border-[#FFF7EE]/20 hover:border-[#FFF7EE]/50 rounded-full font-mono text-[10px] text-muted tracking-widest uppercase transition-all duration-300 focus:outline-none hover:text-white">
+      Skip Intro [ESC]
+    </button>
+
     <div class="relative w-full max-w-lg px-6 flex flex-col items-center">
       
       <!-- Clay Pot Graphics & Steam Container Area -->
@@ -101,8 +106,8 @@
             <path d="M64 256C40 256 32 276 32 296C32 316 48 320 64 320" stroke="#703111" stroke-width="12" stroke-linecap="round" />
             <path d="M448 256C472 256 480 276 480 296C480 316 464 320 448 320" stroke="#703111" stroke-width="12" stroke-linecap="round" />
   
-            <!-- Lid (Slightly Open & Shifted Right to Reveal Dum Magic - Animated Lid Vibration) -->
-            <g class="lid-vibrate">
+            <!-- Lid (Starts closed and transitions to slightly open revealing Dum) -->
+            <g class="lid-animated-open">
               <ellipse cx="256" cy="210" rx="192" ry="32" fill="url(#lid-grad)" />
               <!-- Lid Knob Handle -->
               <path d="M224 178C224 160 236 150 256 150C276 150 288 160 288 178H224Z" fill="#703111" />
@@ -119,8 +124,19 @@
           IT Guy Biryani
         </h2>
         <p class="mt-2 font-sans text-xs uppercase tracking-wider text-muted font-medium">
-          Crafted Fresh. Served Hot.
+          Crafted with Patience. Served with Passion.
         </p>
+        
+        <!-- Live Loading Status Progress Bar -->
+        <div class="mt-8 w-48 mx-auto">
+          <div class="flex justify-between items-center text-[10px] text-muted font-mono mb-1.5 uppercase tracking-widest">
+            <span id="loader-status-text">Preparing...</span>
+            <span id="loader-percentage">0%</span>
+          </div>
+          <div class="w-full h-[2px] bg-[#FFF7EE]/10 rounded-full overflow-hidden">
+            <div id="loader-progress-bar" class="h-full bg-orange transition-all duration-100 ease-out" style="width: 0%;"></div>
+          </div>
+        </div>
       </div>
       
     </div>

@@ -23,7 +23,7 @@
 
 @keyframes pot-slide-in {
   0% {
-    transform: translateX(-120vw) rotate(-20deg);
+    transform: translateX(-120vw) rotate(-15deg);
     opacity: 0;
   }
   100% {
@@ -41,12 +41,19 @@
   }
 }
 
-@keyframes lid-hover-pressure {
-  0%, 100% {
-    transform: translate(45px, -35px) rotate(8deg);
+/* Lid opening transition: remains closed initially, then slowly lifts and tilts open */
+@keyframes lid-slow-open {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
   }
-  50% {
-    transform: translate(46px, -37px) rotate(7.5deg);
+  30% {
+    transform: translate(0, 0) rotate(0deg); /* Stays closed during pot slide and pause */
+  }
+  70% {
+    transform: translate(45px, -35px) rotate(8deg); /* Opens smoothly */
+  }
+  100% {
+    transform: translate(45px, -35px) rotate(8deg);
   }
 }
 
@@ -91,8 +98,9 @@
   animation: pot-settle-breath 6s ease-in-out infinite;
 }
 
-.lid-vibrate {
-  animation: lid-hover-pressure 4s ease-in-out infinite;
+/* Starts closed, then opens and hovers */
+.lid-animated-open {
+  animation: lid-slow-open 4.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
 
 .glint-effect {

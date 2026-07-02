@@ -17,78 +17,133 @@ function initPremiumIntroLoader() {
   const loader = document.getElementById("intro-loader");
   const brandContainer = document.getElementById("loader-brand-container");
   const steamContainer = document.getElementById("steam-container");
+  const skipBtn = document.getElementById("skip-loader-btn");
+  
   if (!loader) return;
+
+  // Optimize visit sequence: play only once per session
+  if (sessionStorage.getItem("loader-played") === "true") {
+    loader.remove();
+    return;
+  }
 
   // Prevent double scrolling during load state
   document.body.classList.add("overflow-hidden");
 
-  // Step 1: Real-time organic steam particle loop
-  let steamInterval = setInterval(() => {
-    if (!steamContainer) return;
+  let steamInterval = null;
+  let sparkleInterval = null;
+  let progressInterval = null;
+
+  const exitLoader = () => {
+    // Flag session storage so loader doesn't repeat on reload/navigation
+    sessionStorage.setItem("loader-played", "true");
     
-    const steamEl = document.createElement("div");
-    steamEl.className = "absolute bottom-0 w-12 h-12 bg-white/10 rounded-full filter blur-md steam-cloud";
+    // Clear all interval handlers
+    if (steamInterval) clearInterval(steamInterval);
+    if (sparkleInterval) clearInterval(sparkleInterval);
+    if (progressInterval) clearInterval(progressInterval);
     
-    // Configure organic random physical shifts
-    const duration = 3.5 + Math.random() * 2; // 3.5s - 5.5s
-    const size = 16 + Math.random() * 32;     // 16px - 48px
-    const leftOffset = -20 + Math.random() * 40; // -20px to 20px drift
+    loader.classList.add("opacity-0");
+    document.body.classList.remove("overflow-hidden");
     
-    steamEl.style.setProperty("--steam-duration", `${duration}s`);
-    steamEl.style.width = `${size}px`;
-    steamEl.style.height = `${size}px`;
-    steamEl.style.left = `calc(50% + ${leftOffset}px - ${size/2}px)`;
-    
-    steamContainer.appendChild(steamEl);
-    
-    // Auto purge to maintain high memory performance
     setTimeout(() => {
-      steamEl.remove();
-    }, duration * 1000);
-  }, 350);
+      loader.remove();
+    }, 1000);
+  };
+
+  // Skip actions mapping
+  if (skipBtn) {
+    skipBtn.addEventListener("click", exitLoader);
+  }
+  
+  const handleKeyDown = (e) => {
+    if (e.key === "Escape") {
+      exitLoader();
+      document.removeEventListener("keydown", handleKeyDown);
+    }
+  };
+  document.addEventListener("keydown", handleKeyDown);
+
+  // Step 1: Real-time organic steam particle loop (triggers after pot slides in and lid opens)
+  setTimeout(() => {
+    steamInterval = setInterval(() => {
+      if (!steamContainer) return;
+      
+      const steamEl = document.createElement("div");
+      steamEl.className = "absolute bottom-0 w-12 h-12 bg-white/10 rounded-full filter blur-md steam-cloud";
+      
+      const duration = 3.5 + Math.random() * 2;
+      const size = 16 + Math.random() * 32;
+      const leftOffset = -20 + Math.random() * 40;
+      
+      steamEl.style.setProperty("--steam-duration", `${duration}s`);
+      steamEl.style.width = `${size}px`;
+      steamEl.style.height = `${size}px`;
+      steamEl.style.left = `calc(50% + ${leftOffset}px - ${size/2}px)`;
+      
+      steamContainer.appendChild(steamEl);
+      
+      setTimeout(() => {
+        steamEl.remove();
+      }, duration * 1000);
+    }, 300);
+  }, 1600); // Trigger when lid-slow-open is partially revealed
 
   // Step 2: Floating gold aroma sparkles
-  let sparkleInterval = setInterval(() => {
-    if (!steamContainer) return;
-    
-    const sparkle = document.createElement("div");
-    sparkle.className = "absolute bottom-2 w-1.5 h-1.5 bg-orange/40 rounded-full filter blur-[0.5px] aroma-particle";
-    
-    const duration = 2.5 + Math.random() * 2;
-    const driftX = -40 + Math.random() * 80;
-    const leftOffset = -30 + Math.random() * 60;
-    
-    sparkle.style.setProperty("--particle-duration", `${duration}s`);
-    sparkle.style.setProperty("--drift-x", `${driftX}px`);
-    sparkle.style.left = `calc(50% + ${leftOffset}px)`;
-    
-    steamContainer.appendChild(sparkle);
-    
-    setTimeout(() => {
-      sparkle.remove();
-    }, duration * 1000);
-  }, 250);
+  setTimeout(() => {
+    sparkleInterval = setInterval(() => {
+      if (!steamContainer) return;
+      
+      const sparkle = document.createElement("div");
+      sparkle.className = "absolute bottom-2 w-1.5 h-1.5 bg-orange/40 rounded-full filter blur-[0.5px] aroma-particle";
+      
+      const duration = 2.5 + Math.random() * 2;
+      const driftX = -40 + Math.random() * 80;
+      const leftOffset = -30 + Math.random() * 60;
+      
+      sparkle.style.setProperty("--particle-duration", `${duration}s`);
+      sparkle.style.setProperty("--drift-x", `${driftX}px`);
+      sparkle.style.left = `calc(50% + ${leftOffset}px)`;
+      
+      steamContainer.appendChild(sparkle);
+      
+      setTimeout(() => {
+        sparkle.remove();
+      }, duration * 1000);
+    }, 200);
+  }, 1800);
 
   // Step 3: Delayed branding fade-in (matches slide-in curve settling at center)
   setTimeout(() => {
     if (brandContainer) {
       brandContainer.classList.remove("opacity-0", "translate-y-4");
+      
+      // Step 3.5: Animate progress bar values dynamically
+      const progressBar = document.getElementById("loader-progress-bar");
+      const percentageEl = document.getElementById("loader-percentage");
+      const statusText = document.getElementById("loader-status-text");
+      
+      let percentage = 0;
+      const statusStates = ["Preparing...", "Dum Cooking...", "Ready!"];
+      
+      progressInterval = setInterval(() => {
+        percentage += Math.floor(Math.random() * 8) + 3; // Random smooth increments
+        if (percentage >= 100) {
+          percentage = 100;
+          clearInterval(progressInterval);
+          statusText.textContent = statusStates[2];
+          
+          // Trigger exit shortly after 100%
+          setTimeout(exitLoader, 800);
+        } else if (percentage > 50) {
+          statusText.textContent = statusStates[1];
+        }
+        
+        if (progressBar) progressBar.style.width = `${percentage}%`;
+        if (percentageEl) percentageEl.textContent = `${percentage}%`;
+      }, 120);
     }
   }, 1800);
-
-  // Step 4: Smooth exit sequence blending into the Hero layout
-  setTimeout(() => {
-    clearInterval(steamInterval);
-    clearInterval(sparkleInterval);
-    
-    loader.classList.add("opacity-0");
-    document.body.classList.remove("overflow-hidden");
-    
-    // Completely unmount component to preserve DOM cycles
-    setTimeout(() => {
-      loader.remove();
-    }, 1000);
-  }, 4200);
 }
 
 
