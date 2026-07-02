@@ -1,3 +1,80 @@
+/* Cinematic loader keyframes for realistic organic steam rising, clay pot breathing, and gold lighting sweeps */
+@keyframes steam-rise {
+  0% {
+    transform: translateY(15px) scale(0.8) rotate(0deg);
+    opacity: 0;
+    filter: blur(4px);
+  }
+  20% {
+    opacity: 0.5;
+    filter: blur(6px);
+  }
+  60% {
+    transform: translateY(-80px) scale(1.6) rotate(15deg);
+    opacity: 0.2;
+    filter: blur(12px);
+  }
+  100% {
+    transform: translateY(-160px) scale(2.4) rotate(45deg);
+    opacity: 0;
+    filter: blur(20px);
+  }
+}
+
+@keyframes pot-breath {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.01);
+  }
+}
+
+@keyframes glint-sweep {
+  0% {
+    left: -150%;
+  }
+  50% {
+    left: -150%;
+  }
+  100% {
+    left: 150%;
+  }
+}
+
+@keyframes particle-drift {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  80% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-120px) translateX(var(--drift-x, 20px));
+    opacity: 0;
+  }
+}
+
+.steam-cloud {
+  animation: steam-rise var(--steam-duration, 5s) ease-out infinite;
+}
+
+.pot-animation-breath {
+  animation: pot-breath 6s ease-in-out infinite;
+}
+
+.glint-effect {
+  animation: glint-sweep 7s ease-in-out infinite;
+}
+
+.aroma-particle {
+  animation: particle-drift var(--particle-duration, 4s) ease-out infinite;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

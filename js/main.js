@@ -1,5 +1,6 @@
 // Core bootstrapper and UI runtime module code definition
 document.addEventListener("DOMContentLoaded", () => {
+  initPremiumIntroLoader();
   initNavbarBehavior();
   initMobileMenuBehavior();
   initMenuManagement();
@@ -7,6 +8,104 @@ document.addEventListener("DOMContentLoaded", () => {
   initOrderDrawer();
   initContactFormValidation();
 });
+
+/**
+ * Premium Cinematic Clay Pot Loader Engine
+ * Handles organic steam creation, glint reflections, brand fading, and exit transitions.
+ */
+function initPremiumIntroLoader() {
+  const loader = document.getElementById("intro-loader");
+  const brandContainer = document.getElementById("loader-brand-container");
+  const steamContainer = document.getElementById("steam-container");
+  if (!loader) return;
+
+  // Prevent double scrolling during load state
+  document.body.classList.add("overflow-hidden");
+
+  // Step 1: Real-time organic steam particle loop
+  let steamInterval = setInterval(() => {
+    if (!steamContainer) return;
+    
+    const steamEl = document.createElement("div");
+    steamEl.className = "absolute bottom-0 w-12 h-12 bg-white/20 rounded-full filter blur-md steam-cloud";
+    
+    // Configure organic random physical shifts
+    const duration = 3.5 + Math.random() * 2; // 3.5s - 5.5s
+    const size = 16 + Math.random() * 32;     // 16px - 48px
+    const leftOffset = -20 + Math.random() * 40; // -20px to 20px drift
+    
+    steamEl.style.setProperty("--steam-duration", `${duration}s`);
+    steamEl.style.width = `${size}px`;
+    steamEl.style.height = `${size}px`;
+    steamEl.style.left = `calc(50% + ${leftOffset}px - ${size/2}px)`;
+    
+    steamContainer.appendChild(steamEl);
+    
+    // Auto purge to maintain high memory performance
+    setTimeout(() => {
+      steamEl.remove();
+    }, duration * 1000);
+  }, 350);
+
+  // Step 2: Floating gold aroma sparkles
+  let sparkleInterval = setInterval(() => {
+    if (!steamContainer) return;
+    
+    const sparkle = document.createElement("div");
+    sparkle.className = "absolute bottom-2 w-1.5 h-1.5 bg-orange/40 rounded-full filter blur-[0.5px] aroma-particle";
+    
+    const duration = 2.5 + Math.random() * 2;
+    const driftX = -40 + Math.random() * 80;
+    const leftOffset = -30 + Math.random() * 60;
+    
+    sparkle.style.setProperty("--particle-duration", `${duration}s`);
+    sparkle.style.setProperty("--drift-x", `${driftX}px`);
+    sparkle.style.left = `calc(50% + ${leftOffset}px)`;
+    
+    steamContainer.appendChild(sparkle);
+    
+    setTimeout(() => {
+      sparkle.remove();
+    }, duration * 1000);
+  }, 250);
+
+  // Step 3: Progressive cooking dots reveal sequence
+  setTimeout(() => {
+    if (brandContainer) {
+      brandContainer.classList.remove("opacity-0", "translate-y-4");
+    }
+  }, 600);
+
+  const dots = [
+    document.getElementById("spice-dot-1"),
+    document.getElementById("spice-dot-2"),
+    document.getElementById("spice-dot-3")
+  ];
+
+  dots.forEach((dot, index) => {
+    setTimeout(() => {
+      if (dot) {
+        dot.classList.remove("bg-borderGray", "scale-75");
+        dot.classList.add("bg-orange", "scale-100", "shadow-glow");
+      }
+    }, 1000 + index * 500);
+  });
+
+  // Step 4: Smooth exit sequence blending into the Hero layout
+  setTimeout(() => {
+    clearInterval(steamInterval);
+    clearInterval(sparkleInterval);
+    
+    loader.classList.add("opacity-0");
+    document.body.classList.remove("overflow-hidden");
+    
+    // Completely unmount component to preserve DOM cycles
+    setTimeout(() => {
+      loader.remove();
+    }, 1000);
+  }, 3500);
+}
+
 
 /**
  * Manages sticky navbar scroll transitions
