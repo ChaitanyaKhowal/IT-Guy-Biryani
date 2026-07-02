@@ -45,88 +45,82 @@
 <body class="bg-obsidian text-brownText-body font-body antialiased selection:bg-orange selection:text-white overflow-x-hidden">
 
   <!-- Premium Cinematic Intro Loader -->
-  <div id="intro-loader" class="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#FAF6F1] transition-opacity duration-1000 ease-in-out">
+  <div id="intro-loader" class="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#000000] transition-opacity duration-1000 ease-in-out">
     <div class="relative w-full max-w-lg px-6 flex flex-col items-center">
       
       <!-- Clay Pot Graphics & Steam Container Area -->
-      <div class="relative w-72 h-72 md:w-80 md:h-80 flex items-center justify-center pot-animation-breath">
-        
-        <!-- Organic Steam Generator Overlay -->
-        <div id="steam-container" class="absolute bottom-28 w-24 h-40 pointer-events-none flex justify-center z-10"></div>
-        
-        <!-- Glowing aroma light backdrop -->
-        <div class="absolute inset-0 bg-gradient-to-t from-orange/10 via-orange/5 to-transparent rounded-full filter blur-xl scale-75 opacity-70"></div>
-        
-        <!-- Clay Pot Base & Lid Composite Graphic Vector Illustration -->
-        <svg class="w-56 h-56 md:w-64 md:h-64 drop-shadow-[0_20px_40px_rgba(36,27,22,0.15)] z-20" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Realistic clay textures & gradients -->
-          <defs>
-            <linearGradient id="clay-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#C26A3A" />
-              <stop offset="50%" stop-color="#9E4D22" />
-              <stop offset="100%" stop-color="#703111" />
-            </linearGradient>
-            <linearGradient id="lid-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#D97A43" />
-              <stop offset="100%" stop-color="#803B16" />
-            </linearGradient>
-            <linearGradient id="rice-grad" x1="0%" y1="100%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#F2C94C" />
-              <stop offset="40%" stop-color="#FFF7EE" />
-              <stop offset="70%" stop-color="#E08B35" />
-              <stop offset="100%" stop-color="#A65313" />
-            </linearGradient>
-          </defs>
+      <div class="relative w-72 h-72 md:w-80 md:h-80 flex items-center justify-center pot-slide-entry">
+        <div class="pot-animation-breath flex items-center justify-center w-full h-full relative">
+          <!-- Organic Steam Generator Overlay -->
+          <div id="steam-container" class="absolute bottom-28 w-24 h-40 pointer-events-none flex justify-center z-10"></div>
           
-          <!-- Pot Main Base Body -->
-          <path d="M64 256C64 350 120 416 256 416C392 416 448 350 448 256H64Z" fill="url(#clay-grad)" />
+          <!-- Glowing warm golden spotlight ambient backdrop -->
+          <div class="absolute inset-0 bg-gradient-to-t from-orange/20 via-orange/10 to-transparent rounded-full filter blur-2xl scale-75 opacity-90 mix-blend-screen"></div>
           
-          <!-- Pot Inner Cavity / Open Rim (Visible Biryani Food Layer) -->
-          <ellipse cx="256" cy="256" rx="192" ry="32" fill="#52200A" />
-          
-          <!-- Rice, Chicken, Herb Garnish Vector Elements Inside the Pot -->
-          <ellipse cx="256" cy="256" rx="180" ry="24" fill="url(#rice-grad)" />
-          <!-- Saffron Strands & Fried Onions Detail Marks -->
-          <path d="M180 250Q190 245 200 252" stroke="#6E2B25" stroke-width="4" stroke-linecap="round" />
-          <path d="M220 260Q225 250 235 258" stroke="#E67E22" stroke-width="4" stroke-linecap="round" />
-          <path d="M310 248Q315 255 330 250" stroke="#4F6B3C" stroke-width="4" stroke-linecap="round" />
-          <path d="M280 252Q290 246 295 255" stroke="#6E2B25" stroke-width="3" stroke-linecap="round" />
-          <!-- Long grain structural marks -->
-          <ellipse cx="250" cy="253" rx="8" ry="2" fill="#FFF7EE" transform="rotate(15, 250, 253)" />
-          <ellipse cx="270" cy="258" rx="9" ry="2" fill="#FFF7EE" transform="rotate(-10, 270, 258)" />
-          <ellipse cx="205" cy="255" rx="7" ry="2" fill="#FFF7EE" transform="rotate(45, 205, 255)" />
-          <ellipse cx="320" cy="256" rx="8" ry="2" fill="#FFF7EE" transform="rotate(-30, 320, 256)" />
-          
-          <!-- Pot Left & Right Handles -->
-          <path d="M64 256C40 256 32 276 32 296C32 316 48 320 64 320" stroke="#703111" stroke-width="12" stroke-linecap="round" />
-          <path d="M448 256C472 256 480 276 480 296C480 316 464 320 448 320" stroke="#703111" stroke-width="12" stroke-linecap="round" />
-
-          <!-- Lid (Slightly Open & Shifted Right to Reveal Dum Magic) -->
-          <g transform="translate(45, -35) rotate(8, 256, 210)">
-            <ellipse cx="256" cy="210" rx="192" ry="32" fill="url(#lid-grad)" />
-            <!-- Lid Knob Handle -->
-            <path d="M224 178C224 160 236 150 256 150C276 150 288 160 288 178H224Z" fill="#703111" />
-            <!-- Lid Glint/Highlight Line sweep container -->
-            <ellipse cx="256" cy="210" rx="180" ry="20" stroke="rgba(255,247,238,0.2)" stroke-width="2" />
-          </g>
-        </svg>
+          <!-- Clay Pot Base & Lid Composite Graphic Vector Illustration -->
+          <svg class="w-56 h-56 md:w-64 md:h-64 drop-shadow-[0_25px_50px_rgba(230,126,34,0.25)] z-20" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Realistic clay textures & gradients -->
+            <defs>
+              <linearGradient id="clay-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#C26A3A" />
+                <stop offset="50%" stop-color="#9E4D22" />
+                <stop offset="100%" stop-color="#703111" />
+              </linearGradient>
+              <linearGradient id="lid-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#D97A43" />
+                <stop offset="100%" stop-color="#803B16" />
+              </linearGradient>
+              <linearGradient id="rice-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#F2C94C" />
+                <stop offset="40%" stop-color="#FFF7EE" />
+                <stop offset="70%" stop-color="#E08B35" />
+                <stop offset="100%" stop-color="#A65313" />
+              </linearGradient>
+            </defs>
+            
+            <!-- Pot Main Base Body -->
+            <path d="M64 256C64 350 120 416 256 416C392 416 448 350 448 256H64Z" fill="url(#clay-grad)" />
+            
+            <!-- Pot Inner Cavity / Open Rim (Visible Biryani Food Layer) -->
+            <ellipse cx="256" cy="256" rx="192" ry="32" fill="#52200A" />
+            
+            <!-- Rice, Chicken, Herb Garnish Vector Elements Inside the Pot -->
+            <ellipse cx="256" cy="256" rx="180" ry="24" fill="url(#rice-grad)" />
+            <!-- Saffron Strands & Fried Onions Detail Marks -->
+            <path d="M180 250Q190 245 200 252" stroke="#6E2B25" stroke-width="4" stroke-linecap="round" />
+            <path d="M220 260Q225 250 235 258" stroke="#E67E22" stroke-width="4" stroke-linecap="round" />
+            <path d="M310 248Q315 255 330 250" stroke="#4F6B3C" stroke-width="4" stroke-linecap="round" />
+            <path d="M280 252Q290 246 295 255" stroke="#6E2B25" stroke-width="3" stroke-linecap="round" />
+            <!-- Long grain structural marks -->
+            <ellipse cx="250" cy="253" rx="8" ry="2" fill="#FFF7EE" transform="rotate(15, 250, 253)" />
+            <ellipse cx="270" cy="258" rx="9" ry="2" fill="#FFF7EE" transform="rotate(-10, 270, 258)" />
+            <ellipse cx="205" cy="255" rx="7" ry="2" fill="#FFF7EE" transform="rotate(45, 205, 255)" />
+            <ellipse cx="320" cy="256" rx="8" ry="2" fill="#FFF7EE" transform="rotate(-30, 320, 256)" />
+            
+            <!-- Pot Left & Right Handles -->
+            <path d="M64 256C40 256 32 276 32 296C32 316 48 320 64 320" stroke="#703111" stroke-width="12" stroke-linecap="round" />
+            <path d="M448 256C472 256 480 276 480 296C480 316 464 320 448 320" stroke="#703111" stroke-width="12" stroke-linecap="round" />
+  
+            <!-- Lid (Slightly Open & Shifted Right to Reveal Dum Magic - Animated Lid Vibration) -->
+            <g class="lid-vibrate">
+              <ellipse cx="256" cy="210" rx="192" ry="32" fill="url(#lid-grad)" />
+              <!-- Lid Knob Handle -->
+              <path d="M224 178C224 160 236 150 256 150C276 150 288 160 288 178H224Z" fill="#703111" />
+              <!-- Lid Glint/Highlight Line sweep container -->
+              <ellipse cx="256" cy="210" rx="180" ry="20" stroke="rgba(255,247,238,0.2)" stroke-width="2" />
+            </g>
+          </svg>
+        </div>
       </div>
 
       <!-- Sophisticated Typography & Logo Area -->
       <div class="mt-8 text-center transition-all duration-1000 transform opacity-0 translate-y-4" id="loader-brand-container">
-        <h2 class="font-sans text-3xl font-bold tracking-tight text-brownText-heading">
+        <h2 class="font-sans text-3xl font-bold tracking-tight text-white">
           IT Guy Biryani
         </h2>
-        <p class="mt-2 font-sans text-xs uppercase tracking-wider text-brownText-muted font-medium">
-          Crafted with Passion. Served with Precision.
+        <p class="mt-2 font-sans text-xs uppercase tracking-wider text-muted font-medium">
+          Crafted Fresh. Served Hot.
         </p>
-        
-        <!-- Premium Cooking Dum Progress Saffron Dot Sequence -->
-        <div class="flex items-center justify-center gap-3 mt-6">
-          <span class="w-2.5 h-2.5 rounded-full bg-borderGray transition-all duration-500 scale-75" id="spice-dot-1"></span>
-          <span class="w-2.5 h-2.5 rounded-full bg-borderGray transition-all duration-500 scale-75" id="spice-dot-2"></span>
-          <span class="w-2.5 h-2.5 rounded-full bg-borderGray transition-all duration-500 scale-75" id="spice-dot-3"></span>
-        </div>
       </div>
       
     </div>

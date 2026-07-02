@@ -27,7 +27,7 @@ function initPremiumIntroLoader() {
     if (!steamContainer) return;
     
     const steamEl = document.createElement("div");
-    steamEl.className = "absolute bottom-0 w-12 h-12 bg-white/20 rounded-full filter blur-md steam-cloud";
+    steamEl.className = "absolute bottom-0 w-12 h-12 bg-white/10 rounded-full filter blur-md steam-cloud";
     
     // Configure organic random physical shifts
     const duration = 3.5 + Math.random() * 2; // 3.5s - 5.5s
@@ -69,27 +69,12 @@ function initPremiumIntroLoader() {
     }, duration * 1000);
   }, 250);
 
-  // Step 3: Progressive cooking dots reveal sequence
+  // Step 3: Delayed branding fade-in (matches slide-in curve settling at center)
   setTimeout(() => {
     if (brandContainer) {
       brandContainer.classList.remove("opacity-0", "translate-y-4");
     }
-  }, 600);
-
-  const dots = [
-    document.getElementById("spice-dot-1"),
-    document.getElementById("spice-dot-2"),
-    document.getElementById("spice-dot-3")
-  ];
-
-  dots.forEach((dot, index) => {
-    setTimeout(() => {
-      if (dot) {
-        dot.classList.remove("bg-borderGray", "scale-75");
-        dot.classList.add("bg-orange", "scale-100", "shadow-glow");
-      }
-    }, 1000 + index * 500);
-  });
+  }, 1800);
 
   // Step 4: Smooth exit sequence blending into the Hero layout
   setTimeout(() => {
@@ -103,7 +88,7 @@ function initPremiumIntroLoader() {
     setTimeout(() => {
       loader.remove();
     }, 1000);
-  }, 3500);
+  }, 4200);
 }
 
 

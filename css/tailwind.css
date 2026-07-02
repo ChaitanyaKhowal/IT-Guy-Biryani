@@ -1,32 +1,52 @@
 /* Cinematic loader keyframes for realistic organic steam rising, clay pot breathing, and gold lighting sweeps */
 @keyframes steam-rise {
   0% {
-    transform: translateY(15px) scale(0.8) rotate(0deg);
+    transform: translateY(15px) scale(0.6) rotate(0deg);
     opacity: 0;
     filter: blur(4px);
   }
   20% {
-    opacity: 0.5;
+    opacity: 0.4;
     filter: blur(6px);
   }
   60% {
-    transform: translateY(-80px) scale(1.6) rotate(15deg);
-    opacity: 0.2;
+    transform: translateY(-80px) scale(1.4) rotate(15deg);
+    opacity: 0.15;
     filter: blur(12px);
   }
   100% {
-    transform: translateY(-160px) scale(2.4) rotate(45deg);
+    transform: translateY(-160px) scale(2.2) rotate(45deg);
     opacity: 0;
     filter: blur(20px);
   }
 }
 
-@keyframes pot-breath {
+@keyframes pot-slide-in {
+  0% {
+    transform: translateX(-120vw) rotate(-20deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes pot-settle-breath {
   0%, 100% {
-    transform: scale(1);
+    transform: translateY(0) scale(1);
   }
   50% {
-    transform: scale(1.01);
+    transform: translateY(-2px) scale(1.005);
+  }
+}
+
+@keyframes lid-hover-pressure {
+  0%, 100% {
+    transform: translate(45px, -35px) rotate(8deg);
+  }
+  50% {
+    transform: translate(46px, -37px) rotate(7.5deg);
   }
 }
 
@@ -63,8 +83,16 @@
   animation: steam-rise var(--steam-duration, 5s) ease-out infinite;
 }
 
+.pot-slide-entry {
+  animation: pot-slide-in 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
 .pot-animation-breath {
-  animation: pot-breath 6s ease-in-out infinite;
+  animation: pot-settle-breath 6s ease-in-out infinite;
+}
+
+.lid-vibrate {
+  animation: lid-hover-pressure 4s ease-in-out infinite;
 }
 
 .glint-effect {
