@@ -1,0 +1,7 @@
+# robots.txt configuration for IT Guy Biryani
+User-agent: *
+Allow: /
+Disallow: /scratch/
+
+# Sitemap index location
+Sitemap: https://itguybiryani.com/sitemap.xml

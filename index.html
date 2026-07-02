@@ -4,41 +4,152 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>IT Guy Biryani | Homemade Biryani Crafted with Precision</title>
-  <meta name="description" content="Hygienic, premium homemade chicken biryani prepared with precision by a software engineer. Sourced organic spices, fresh chicken, and aged Basmati. Serving Hinjawadi Phase 1 & Blue Ridge, Pune.">
+  <title>IT Guy Biryani | Best Chicken Dum Biryani in Hinjawadi, Pune</title>
+  <meta name="description" content="Looking for the best chicken biryani in Hinjawadi? IT Guy Biryani serves premium, slow-cooked, homemade biryani prepared with kitchen precision by a home chef. Sourced with organic spices and farm-fresh ingredients. Only 10 pots cooked daily. Order 3 hours in advance.">
+  <meta name="keywords" content="Best Chicken Biryani in Hinjawadi, Homemade Biryani in Pune, Chicken Dum Biryani Blue Ridge, Fresh Homemade Biryani Hinjawadi Phase 1, Premium Biryani Near Me, Cloud Kitchen Pune, Home Chef Pune, Biryani Delivery Hinjawadi, Blue Ridge Food Delivery, Weekend Biryani Pune">
   
-  <!-- Fonts -->
+  <!-- Canonical & PWA Meta -->
+  <link rel="canonical" href="https://itguybiryani.com/">
+  <meta name="theme-color" content="#C96A1A">
+  <link rel="manifest" href="./site.webmanifest">
+  
+  <!-- SEO Performance Optimization Preconnects -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  
+  <!-- OpenGraph Tags -->
+  <meta property="og:type" content="restaurant">
+  <meta property="og:title" content="IT Guy Biryani | Premium Homemade Biryani in Hinjawadi Phase 1">
+  <meta property="og:description" content="Taste the difference of disciplined slow-cooking. Premium homemade Chicken Dum Biryani cooked fresh in clay pots. Sourced organic ingredients. Order now in Blue Ridge Society.">
+  <meta property="og:url" content="https://itguybiryani.com/">
+  <meta property="og:image" content="https://itguybiryani.com/assets/images/hero-biryani.jpg">
+  <meta property="og:locale" content="en_IN">
+  
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="IT Guy Biryani | Premium Homemade Biryani in Hinjawadi Phase 1">
+  <meta name="twitter:description" content="Homemade Chicken Dum Biryani cooked to order by a software engineer in Pune. Only 10 pots daily.">
+  <meta name="twitter:image" content="https://itguybiryani.com/assets/images/hero-biryani.jpg">
+  
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="./assets/icons/apple-touch-icon.png">
+  
+  <!-- Custom Fonts (Preloaded for faster FCP) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700&display=swap" rel="stylesheet">
+  </noscript>
   
   <!-- Compiled Tailwind CSS Stylesheet -->
   <link rel="stylesheet" href="./assets/css/main.min.css">
   
+  <!-- Enterprise JSON-LD Schema (LocalBusiness, FoodEstablishment, Product Offer & FAQ combined) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "FoodEstablishment",
-    "name": "IT Guy Biryani",
-    "image": "https://itguybiryani.com/assets/images/hero-biryani.webp",
-    "priceRange": "$$",
-    "telephone": "+917276336896",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Blue Ridge Society, Hinjawadi Phase 1",
-      "addressLocality": "Pune",
-      "addressRegion": "MH",
-      "postalCode": "411057",
-      "addressCountry": "IN"
-    },
-    "menu": "https://itguybiryani.com/#menu",
-    "servesCuisine": "Indian, Biryani",
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-      "opens": "18:00",
-      "closes": "23:59"
-    }
+    "@graph": [
+      {
+        "@type": "FoodEstablishment",
+        "@id": "https://itguybiryani.com/#restaurant",
+        "name": "IT Guy Biryani",
+        "image": "https://itguybiryani.com/assets/images/hero-biryani.jpg",
+        "priceRange": "$$",
+        "telephone": "+917276336896",
+        "servesCuisine": "Indian, Biryani",
+        "menu": "https://itguybiryani.com/#menu",
+        "acceptsReservations": "true",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Blue Ridge Society, Hinjawadi Phase 1",
+          "addressLocality": "Pune",
+          "addressRegion": "MH",
+          "postalCode": "411057",
+          "addressCountry": "IN"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "18.5793",
+          "longitude": "73.7384"
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "opens": "18:00",
+          "closes": "23:59"
+        }
+      },
+      {
+        "@type": "Menu",
+        "@id": "https://itguybiryani.com/#menu-schema",
+        "name": "IT Guy Biryani Menu",
+        "hasMenuSection": [
+          {
+            "@type": "MenuSection",
+            "name": "Signature Dum Biryanis",
+            "hasMenuItem": [
+              {
+                "@type": "MenuItem",
+                "name": "Chicken Dum Biryani",
+                "description": "Classic slow-cooked biryani using aged basmati, premium chicken, organic whole spices, and pure ghee. Cooked in clay pots.",
+                "offers": {
+                  "@type": "AggregateOffer",
+                  "lowPrice": "600",
+                  "highPrice": "1200",
+                  "priceCurrency": "INR"
+                }
+              },
+              {
+                "@type": "MenuItem",
+                "name": "Chicken Boneless Biryani",
+                "description": "Marinated boneless chicken pieces layered with fragrant Basmati rice and fresh herbs, cooked to order.",
+                "offers": {
+                  "@type": "AggregateOffer",
+                  "lowPrice": "650",
+                  "highPrice": "1300",
+                  "priceCurrency": "INR"
+                }
+              },
+              {
+                "@type": "MenuItem",
+                "name": "Chicken Fry Piece Biryani",
+                "description": "Spiced, crispy fried chicken pieces layered over aromatic, slow-cooked dum biryani rice.",
+                "offers": {
+                  "@type": "AggregateOffer",
+                  "lowPrice": "650",
+                  "highPrice": "1300",
+                  "priceCurrency": "INR"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://itguybiryani.com/#faq-schema",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Why do you require 3 hours advance booking?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We cook every order from scratch. Your biryani is prepared only after slot verification. We do not pre-cook, reheat, or store items."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why do you limit production to 10 pots a day?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We prioritize consistency, authentic taste, and absolute hygiene. Limiting our daily runs ensures every clay pot is personally monitored."
+            }
+          }
+        ]
+      }
+    ]
   }
   </script>
 </head>
