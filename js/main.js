@@ -72,9 +72,9 @@ function initPremiumIntroLoader() {
       const steamEl = document.createElement("div");
       steamEl.className = "absolute bottom-0 w-12 h-12 bg-white/10 rounded-full filter blur-md steam-cloud";
       
-      const duration = 3.5 + Math.random() * 2;
-      const size = 16 + Math.random() * 32;
-      const leftOffset = -20 + Math.random() * 40;
+      const duration = 2.0 + Math.random() * 1.5;
+      const size = 16 + Math.random() * 24;
+      const leftOffset = -15 + Math.random() * 30;
       
       steamEl.style.setProperty("--steam-duration", `${duration}s`);
       steamEl.style.width = `${size}px`;
@@ -86,8 +86,8 @@ function initPremiumIntroLoader() {
       setTimeout(() => {
         steamEl.remove();
       }, duration * 1000);
-    }, 300);
-  }, 1600); // Trigger when lid-slow-open is partially revealed
+    }, 200);
+  }, 1000); // Trigger when lid-slow-open is partially revealed
 
   // Step 2: Floating gold aroma sparkles
   setTimeout(() => {
@@ -95,11 +95,11 @@ function initPremiumIntroLoader() {
       if (!steamContainer) return;
       
       const sparkle = document.createElement("div");
-      sparkle.className = "absolute bottom-2 w-1.5 h-1.5 bg-orange/40 rounded-full filter blur-[0.5px] aroma-particle";
+      sparkle.className = "absolute bottom-2 w-1.5 h-1.5 bg-[#D99A2B]/40 rounded-full filter blur-[0.5px] aroma-particle";
       
-      const duration = 2.5 + Math.random() * 2;
-      const driftX = -40 + Math.random() * 80;
-      const leftOffset = -30 + Math.random() * 60;
+      const duration = 1.8 + Math.random() * 1.2;
+      const driftX = -30 + Math.random() * 60;
+      const leftOffset = -20 + Math.random() * 40;
       
       sparkle.style.setProperty("--particle-duration", `${duration}s`);
       sparkle.style.setProperty("--drift-x", `${driftX}px`);
@@ -110,8 +110,8 @@ function initPremiumIntroLoader() {
       setTimeout(() => {
         sparkle.remove();
       }, duration * 1000);
-    }, 200);
-  }, 1800);
+    }, 150);
+  }, 1200);
 
   // Step 3: Delayed branding fade-in (matches slide-in curve settling at center)
   setTimeout(() => {
@@ -127,23 +127,23 @@ function initPremiumIntroLoader() {
       const statusStates = ["Preparing...", "Dum Cooking...", "Ready!"];
       
       progressInterval = setInterval(() => {
-        percentage += Math.floor(Math.random() * 8) + 3; // Random smooth increments
+        percentage += Math.floor(Math.random() * 12) + 8; // Random smooth increments
         if (percentage >= 100) {
           percentage = 100;
           clearInterval(progressInterval);
           statusText.textContent = statusStates[2];
           
-          // Trigger exit shortly after 100%
-          setTimeout(exitLoader, 800);
+          // Trigger exit shortly after 100% (Aiming at 3.9s total timeline)
+          setTimeout(exitLoader, 400);
         } else if (percentage > 50) {
           statusText.textContent = statusStates[1];
         }
         
         if (progressBar) progressBar.style.width = `${percentage}%`;
         if (percentageEl) percentageEl.textContent = `${percentage}%`;
-      }, 120);
+      }, 100);
     }
-  }, 1800);
+  }, 1600);
 }
 
 

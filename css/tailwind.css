@@ -1,12 +1,12 @@
 /* Cinematic loader keyframes for realistic organic steam rising, clay pot breathing, and gold lighting sweeps */
 @keyframes steam-rise {
   0% {
-    transform: translateY(15px) scale(0.6) rotate(0deg);
+    transform: translateY(20px) scale(0.6) rotate(0deg);
     opacity: 0;
     filter: blur(4px);
   }
   20% {
-    opacity: 0.4;
+    opacity: 0.35;
     filter: blur(6px);
   }
   60% {
@@ -23,21 +23,18 @@
 
 @keyframes pot-slide-in {
   0% {
-    transform: translateX(-120vw) rotate(-15deg);
+    transform: translateX(-120vw) rotate(-20deg);
     opacity: 0;
+  }
+  60% {
+    transform: translateX(2vw) rotate(1deg); /* Settle bounce */
+  }
+  80% {
+    transform: translateX(-0.5vw) rotate(-0.5deg);
   }
   100% {
     transform: translateX(0) rotate(0deg);
     opacity: 1;
-  }
-}
-
-@keyframes pot-settle-breath {
-  0%, 100% {
-    transform: translateY(0) scale(1);
-  }
-  50% {
-    transform: translateY(-2px) scale(1.005);
   }
 }
 
@@ -47,13 +44,10 @@
     transform: translate(0, 0) rotate(0deg);
   }
   30% {
-    transform: translate(0, 0) rotate(0deg); /* Stays closed during pot slide and pause */
-  }
-  70% {
-    transform: translate(45px, -35px) rotate(8deg); /* Opens smoothly */
+    transform: translate(0, 0) rotate(0deg); /* Pause for 300ms + 500ms */
   }
   100% {
-    transform: translate(45px, -35px) rotate(8deg);
+    transform: translate(60px, -45px) rotate(14deg); /* Opens smoothly */
   }
 }
 
@@ -71,36 +65,32 @@
 
 @keyframes particle-drift {
   0% {
-    transform: translateY(0) translateX(0);
+    transform: translateY(0) scale(0.8);
     opacity: 0;
   }
   20% {
-    opacity: 0.8;
+    opacity: 0.7;
   }
   80% {
-    opacity: 0.3;
+    opacity: 0.2;
   }
   100% {
-    transform: translateY(-120px) translateX(var(--drift-x, 20px));
+    transform: translateY(-100px) translateX(var(--drift-x, 20px)) scale(0.5);
     opacity: 0;
   }
 }
 
 .steam-cloud {
-  animation: steam-rise var(--steam-duration, 5s) ease-out infinite;
+  animation: steam-rise var(--steam-duration, 4s) ease-out forwards;
 }
 
 .pot-slide-entry {
-  animation: pot-slide-in 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: pot-slide-in 1.4s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
 
-.pot-animation-breath {
-  animation: pot-settle-breath 6s ease-in-out infinite;
-}
-
-/* Starts closed, then opens and hovers */
+/* Starts closed, then opens and hovers starting at ~0.8s and fully opens by 3.5s */
 .lid-animated-open {
-  animation: lid-slow-open 4.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  animation: lid-slow-open 2.7s cubic-bezier(0.25, 1, 0.5, 1) 0.8s forwards;
 }
 
 .glint-effect {
@@ -108,7 +98,7 @@
 }
 
 .aroma-particle {
-  animation: particle-drift var(--particle-duration, 4s) ease-out infinite;
+  animation: particle-drift var(--particle-duration, 3s) ease-out forwards;
 }
 
 @tailwind base;
