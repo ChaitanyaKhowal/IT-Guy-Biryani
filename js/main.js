@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initFAQAccordion();
   initOrderDrawer();
   initContactFormValidation();
+  initPremiumReviewsSlider();
 });
 
 /**
@@ -438,4 +439,224 @@ Message: ${messageInput.value.trim()}`;
       }, 1500);
     }
   });
+}
+
+/**
+ * Premium Dynamic Reviews Slider Engine
+ * Controls rotation, key events, and swipe navigation without dependencies.
+ */
+function initPremiumReviewsSlider() {
+  const target = document.getElementById("review-card-target");
+  const prevBtn = document.getElementById("review-prev-btn");
+  const nextBtn = document.getElementById("review-next-btn");
+  const dotsContainer = document.getElementById("review-dots-container");
+  const container = document.getElementById("reviews-slider-container");
+
+  if (!target || !dotsContainer) return;
+
+  const reviewsData = [
+    {
+      name: "Rajshree Writes",
+      rating: 5,
+      review: "Super tasty, wordless, indescribable taste. Literally enjoyed every single bite of it. I can't believe that a person who often works on computer can cook better than many restaurants here. I ordered thrice in a week and loved all the time.",
+      monthsAgo: "a month ago",
+      source: "Google Review"
+    },
+    {
+      name: "Amey Zare",
+      rating: 5,
+      review: "Never eating biryani at any other place ever again! There's a reason why this guy has 5-star reviews from everyone.",
+      monthsAgo: "2 months ago",
+      source: "Google Review"
+    },
+    {
+      name: "Sanjana Gadhekar",
+      rating: 5,
+      review: "Hands down, best biryani ever! Authentic flavours, top-notch quality and super generous portions. A taste explosion in every bite.",
+      monthsAgo: "3 months ago",
+      source: "Google Review"
+    },
+    {
+      name: "Tara Dandge",
+      rating: 5,
+      review: "Amazing biryani! Great balance of spices, tender meat, fragrant rice, fresh, hygienic and full of authentic taste.",
+      monthsAgo: "4 months ago",
+      source: "Google Review"
+    },
+    {
+      name: "Prajwal Gadhekar",
+      rating: 5,
+      review: "The rice was perfectly cooked, flavours were balanced and the portion size was generous. Definitely worth trying.",
+      monthsAgo: "5 months ago",
+      source: "Google Review"
+    },
+    {
+      name: "Bhumika Dandge",
+      rating: 5,
+      review: "One of the best biryanis I've had. Perfectly cooked rice, great spices and amazing taste.",
+      monthsAgo: "5 months ago",
+      source: "Google Review"
+    },
+    {
+      name: "Sanjeeth Patel",
+      rating: 5,
+      review: "Delicious biryani. Different from other biryanis and extremely tasty.",
+      monthsAgo: "6 months ago",
+      source: "Google Review"
+    },
+    {
+      name: "Pranjal Patidar",
+      rating: 5,
+      review: "The biryani is so perfect that I order it twice every week.",
+      monthsAgo: "6 months ago",
+      source: "Google Review"
+    }
+  ];
+
+  let currentIndex = 0;
+  let autoPlayTimer = null;
+  const autoPlayDelay = 6000;
+
+  // Render dots
+  dotsContainer.innerHTML = "";
+  reviewsData.forEach((_, index) => {
+    const dot = document.createElement("button");
+    dot.className = `w-2 h-2 rounded-full transition-all focus:outline-none focus:ring-2 focus:ring-[#A65A2E] ${
+      index === 0 ? "bg-[#A65A2E] w-4" : "bg-[#8C7A70]/40"
+    }`;
+    dot.setAttribute("aria-label", `Go to review slide ${index + 1}`);
+    dot.addEventListener("click", () => {
+      goToSlide(index);
+      resetAutoPlay();
+    });
+    dotsContainer.appendChild(dot);
+  });
+
+  const dots = dotsContainer.querySelectorAll("button");
+
+  function renderActiveReview() {
+    const data = reviewsData[currentIndex];
+    target.classList.remove("review-slide-active");
+    // Trigger reflow to restart CSS animation smoothly
+    void target.offsetWidth;
+    
+    const stars = "★".repeat(data.rating) + "☆".repeat(5 - data.rating);
+
+    target.innerHTML = `
+      <div class="flex justify-between items-center w-full">
+        <div class="flex items-center gap-1.5 text-xs font-sans text-yellow-500 font-bold">
+          <span class="text-sm">${stars}</span>
+          <span class="text-[#8C7A70] font-semibold font-mono">// ${data.source}</span>
+        </div>
+        <!-- Google Colored G Icon representation -->
+        <svg class="w-4 h-4" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l3.66-2.85z" fill="#FBBC05"/>
+          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.85c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+        </svg>
+      </div>
+
+      <blockquote class="text-[#2E2018] text-sm md:text-base italic font-body leading-relaxed flex-1">
+        "${data.review}"
+      </blockquote>
+
+      <div class="flex justify-between items-center border-t border-borderGray/50 pt-4 text-xs font-sans">
+        <span class="font-bold text-[#2E2018] tracking-wide uppercase">${data.name}</span>
+        <span class="text-[#8C7A70] font-semibold">${data.monthsAgo}</span>
+      </div>
+    `;
+
+    target.classList.add("review-slide-active");
+
+    // Sync dots UI active state
+    dots.forEach((dot, idx) => {
+      if (idx === currentIndex) {
+        dot.className = "w-2 h-2 rounded-full transition-all focus:outline-none focus:ring-2 focus:ring-[#A65A2E] bg-[#A65A2E] w-4";
+      } else {
+        dot.className = "w-2 h-2 rounded-full transition-all focus:outline-none focus:ring-2 focus:ring-[#A65A2E] bg-[#8C7A70]/40";
+      }
+    });
+  }
+
+  function goToSlide(index) {
+    currentIndex = (index + reviewsData.length) % reviewsData.length;
+    renderActiveReview();
+  }
+
+  function nextSlide() {
+    goToSlide(currentIndex + 1);
+  }
+
+  function prevSlide() {
+    goToSlide(currentIndex - 1);
+  }
+
+  // Bind side controls
+  if (prevBtn) prevBtn.addEventListener("click", () => { prevSlide(); resetAutoPlay(); });
+  if (nextBtn) nextBtn.addEventListener("click", () => { nextSlide(); resetAutoPlay(); });
+
+  // Key Event triggers for accessibility
+  target.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowLeft") {
+      prevSlide();
+      resetAutoPlay();
+    } else if (e.key === "ArrowRight") {
+      nextSlide();
+      resetAutoPlay();
+    }
+  });
+
+  // Touch Swipe Support layout
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  target.addEventListener("touchstart", (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  target.addEventListener("touchend", (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+  }, { passive: true });
+
+  function handleSwipe() {
+    const threshold = 50;
+    if (touchStartX - touchEndX > threshold) {
+      nextSlide();
+      resetAutoPlay();
+    } else if (touchEndX - touchStartX > threshold) {
+      prevSlide();
+      resetAutoPlay();
+    }
+  }
+
+  // Auto play handlers
+  function startAutoPlay() {
+    // Respect system preference
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (mediaQuery && mediaQuery.matches) return;
+
+    autoPlayTimer = setInterval(nextSlide, autoPlayDelay);
+  }
+
+  function stopAutoPlay() {
+    if (autoPlayTimer) {
+      clearInterval(autoPlayTimer);
+      autoPlayTimer = null;
+    }
+  }
+
+  function resetAutoPlay() {
+    stopAutoPlay();
+    startAutoPlay();
+  }
+
+  // Auto rotation controls binding hover sequences
+  container.addEventListener("mouseenter", stopAutoPlay);
+  container.addEventListener("mouseleave", startAutoPlay);
+
+  // Initial draw trigger
+  renderActiveReview();
+  startAutoPlay();
 }

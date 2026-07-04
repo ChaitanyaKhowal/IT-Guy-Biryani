@@ -105,6 +105,21 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes review-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.review-slide-active {
+  animation: review-fade-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
 @layer base {
   body {
     @apply bg-obsidian text-brownText-body font-body antialiased selection:bg-orange selection:text-white overflow-x-hidden;
