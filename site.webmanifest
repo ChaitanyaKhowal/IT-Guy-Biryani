@@ -1,13 +1,28 @@
 {
+  "id": "com.itguybiryani.app",
   "name": "IT Guy Biryani",
   "short_name": "ITGuyBiryani",
   "description": "Premium homemade biryani crafted with process precision in Hinjawadi, Pune.",
   "start_url": "./index.html",
   "scope": ".",
   "display": "standalone",
+  "display_override": ["standalone", "minimal-ui", "browser"],
   "orientation": "portrait",
-  "background_color": "#FAF6F1",
-  "theme_color": "#C96A1A",
+  "background_color": "#FFF9F2",
+  "theme_color": "#A65A2E",
+  "screenshots": [
+    {
+      "src": "./assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "./assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
   "icons": [
     {
       "src": "./assets/icons/icon-192.png",

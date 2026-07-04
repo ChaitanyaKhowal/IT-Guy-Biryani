@@ -7,22 +7,22 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        obsidian: '#FAF6F1', // Warm ivory main background
-        codeGray: '#FFFFFF', // Clean white card surface
-        borderGray: '#E8DED4', // Very soft border color
-        altBg: '#F3ECE3', // Section alternate warm cream background
+        obsidian: '#FFF9F2', // Background: #FFF9F2
+        codeGray: '#F8F1E8', // Cards: #F8F1E8
+        borderGray: '#E8DED4', // Soft warm border
+        altBg: '#F8F1E8', // Alternating section surface
         brownText: {
-          heading: '#241B16', // Espresso brown for primary headings
-          body: '#5B4A42', // Readable warm grey for body text
-          muted: '#8C7A70' // Muted text color
+          heading: '#2E2018', // Heading: #2E2018
+          body: '#5B463A', // Body: #5B463A
+          muted: '#8C7A70' // Muted warm grey
         },
         orange: {
-          DEFAULT: '#C96A1A', // Saffron brand color
-          dark: '#A65313', // Hover brand color
-          light: '#D98A2B' // Gradient start saffron
+          DEFAULT: '#A65A2E', // Primary: #A65A2E
+          dark: '#8C4924', // Hover: #8C4924
+          light: '#D99A2B' // Accent: #D99A2B
         },
-        success: '#4F6B3C', // Premium green for fresh/organic indicators
-        alert: '#6E2B25' // Deep maroon for limited slots/alert highlights
+        success: '#3E7C59', // Success: #3E7C59
+        alert: '#6E2B25' // Alert deep red
       },
       fontFamily: {
         sans: ['Outfit', 'sans-serif'],
@@ -30,9 +30,9 @@ module.exports = {
         mono: ['JetBrains Mono', 'monospace']
       },
       boxShadow: {
-        card: '0 12px 40px rgba(0, 0, 0, 0.08)',
-        nav: '0 8px 30px rgba(0, 0, 0, 0.05)',
-        glow: '0 4px 12px rgba(201, 106, 26, 0.15)'
+        card: '0 12px 40px rgba(46, 32, 24, 0.06)',
+        nav: '0 8px 30px rgba(46, 32, 24, 0.04)',
+        glow: '0 4px 12px rgba(166, 90, 46, 0.15)'
       },
       borderRadius: {
         'btn': '14px',

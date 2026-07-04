@@ -341,7 +341,11 @@
       <div class="lg:col-span-5 w-full flex justify-center">
         <!-- Visual Media Frame Container -->
         <div class="w-full max-w-md aspect-square relative rounded-2xl overflow-hidden border border-borderGray shadow-card">
-          <img src="./assets/images/hero-biryani.png" alt="Premium Chicken Dum Biryani inside clay pot" width="448" height="448" class="w-full h-full object-cover" fetchpriority="high">
+          <picture>
+            <source srcset="./assets/images/hero-biryani-450.webp" media="(max-width: 480px)">
+            <source srcset="./assets/images/hero-biryani-800.webp" media="(min-width: 481px)">
+            <img src="./assets/images/hero-biryani-800.webp" alt="Premium Chicken Dum Biryani inside clay pot" width="448" height="448" class="w-full h-full object-cover" fetchpriority="high">
+          </picture>
         </div>
       </div>
     </section>
@@ -373,7 +377,11 @@
         </div>
         <div class="lg:col-span-5 w-full flex justify-center">
           <div class="w-full max-w-sm aspect-[3/4] relative rounded-2xl overflow-hidden border border-borderGray bg-white shadow-card">
-            <img src="./assets/images/chef-portrait.png" alt="Founder Rushikesh Dandge in Home Kitchen" width="384" height="512" class="w-full h-full object-cover" loading="lazy" decoding="async">
+            <picture>
+              <source srcset="./assets/images/chef-portrait-400.webp" media="(max-width: 480px)">
+              <source srcset="./assets/images/chef-portrait-600.webp" media="(min-width: 481px)">
+              <img src="./assets/images/chef-portrait-600.webp" alt="Founder Rushikesh Dandge in Home Kitchen" width="384" height="512" class="w-full h-full object-cover" loading="lazy" decoding="async">
+            </picture>
           </div>
         </div>
       </div>
