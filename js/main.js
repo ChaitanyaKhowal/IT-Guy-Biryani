@@ -656,6 +656,15 @@ function initPremiumReviewsSlider() {
   container.addEventListener("mouseenter", stopAutoPlay);
   container.addEventListener("mouseleave", startAutoPlay);
 
+  // Pause rotation when tab goes out of focus
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+      stopAutoPlay();
+    } else {
+      startAutoPlay();
+    }
+  });
+
   // Initial draw trigger
   renderActiveReview();
   startAutoPlay();
