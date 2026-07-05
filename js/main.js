@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /**
- * Premium Cinematic Clay Pot Loader Engine
+ * Premium Cinematic Traditional Pot Loader Engine
  * Handles organic steam creation, glint reflections, brand fading, and exit transitions.
  */
 function initPremiumIntroLoader() {

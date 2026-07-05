@@ -1,4 +1,4 @@
-/* Cinematic loader keyframes for realistic organic steam rising, clay pot breathing, and gold lighting sweeps */
+/* Cinematic loader keyframes for realistic organic steam rising, traditional pot breathing, and gold lighting sweeps */
 @keyframes steam-rise {
   0% {
     transform: translateY(20px) scale(0.6) rotate(0deg);
