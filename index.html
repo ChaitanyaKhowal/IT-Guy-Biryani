@@ -897,56 +897,85 @@
   </div>
 
   <!-- Footer -->
-  <footer id="footer" class="border-t border-borderGray bg-white py-16 px-6 shadow-nav">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-      <div class="flex flex-col items-center md:items-start gap-2">
-        <a href="#" class="font-sans text-lg font-bold tracking-tight text-[#241B16]">
-          <span class="text-orange font-normal">{</span> IT Guy Biryani <span class="text-orange font-normal">}</span>
-        </a>
-        <p class="text-xs text-[#8C7A70] font-semibold">Homemade Biryani Crafted with Precision</p>
-      </div>
-      
-      <!-- Footer details navigation parameters & social links -->
-      <div class="flex items-center justify-center flex-wrap gap-6 text-xs text-[#5B463A]">
-        <a href="#about" class="hover:text-orange transition-colors font-semibold">Our Story</a>
-        <a href="#why-choose-us" class="hover:text-orange transition-colors font-semibold">Why Precision</a>
-        <a href="#menu" class="hover:text-orange transition-colors font-semibold">Our Menu</a>
-        <a href="#ordering-process" class="hover:text-orange transition-colors font-semibold">How to Order</a>
-        <a href="#contact" class="hover:text-orange transition-colors font-semibold">Contact Us</a>
+  <footer id="footer" class="border-t border-[#A65A2E]/20 bg-[#1F1510] py-16 px-6 relative" aria-label="Main Website Footer">
+    <div class="max-w-7xl mx-auto flex flex-col gap-12">
+      <!-- 3-Column Layout Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 items-start">
         
-        <!-- Social Icons with inline SVGs -->
-        <span class="w-px h-4 bg-borderGray mx-1 hidden sm:inline"></span>
-        
-        <a href="https://www.instagram.com/itguybiryani/" 
-           target="_blank" 
-           rel="noopener noreferrer" 
-           class="text-[#5B463A] hover:text-orange transition-colors flex items-center justify-center" 
-           aria-label="Follow IT Guy Biryani on Instagram"
-           title="Instagram">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-          </svg>
-        </a>
+        <!-- Left Column: Branding -->
+        <div class="lg:col-span-5 flex flex-col gap-4">
+          <a href="#" class="font-sans text-xl font-bold tracking-tight text-[#FFF9F2] inline-block focus:outline-none focus:ring-2 focus:ring-[#D99A2B] rounded px-1 -mx-1" aria-label="IT Guy Biryani Home">
+            <span class="text-[#A65A2E] font-normal">{</span> IT Guy Biryani <span class="text-[#A65A2E] font-normal">}</span>
+          </a>
+          <p class="text-sm text-[#F8F1E8]/80 leading-relaxed max-w-sm">
+            Authentic homemade Maharashtrian-style biryani, prepared fresh with premium ingredients.
+          </p>
+        </div>
 
-        <a href="https://wa.me/917276336896?text=Hi%20IT%20Guy%20Biryani%2C%20I%20would%20like%20to%20order%20premium%20dum%20biryani%20today." 
-           target="_blank" 
-           rel="noopener noreferrer" 
-           class="text-[#5B463A] hover:text-[#3E7C59] transition-colors flex items-center justify-center" 
-           aria-label="Contact IT Guy Biryani on WhatsApp"
-           title="WhatsApp">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.005 5.224 5.232.002 11.64.002c3.11.002 6.033 1.213 8.232 3.414 2.2 2.2 3.41 5.123 3.41 8.237 0 6.417-5.23 11.64-11.64 11.64-2.005 0-3.974-.521-5.717-1.517L0 24zm6.59-4.846c1.6.95 3.197 1.45 4.987 1.45 5.376 0 9.75-4.37 9.752-9.743.003-2.604-.996-5.053-2.81-6.87-1.815-1.817-4.267-2.812-6.877-2.812-5.38 0-9.75 4.372-9.752 9.744-.002 1.9.497 3.5 1.46 5.093l-.995 3.633 3.73-.975zm10.702-5.28c-.282-.142-1.67-.823-1.93-.916-.258-.093-.446-.142-.633.14-.187.284-.725.918-.89 1.103-.164.183-.327.206-.61.064-.282-.14-.1.173-2.31-1.8-1.72-1.534-2.88-3.43-3.218-4.002-.338-.57-.036-.88.246-1.16.254-.253.564-.656.847-.984.282-.33.376-.563.564-.938.188-.375.094-.703-.047-.984-.14-.28-.63-1.52-.865-2.08-.228-.55-.478-.475-.656-.475-.17-.008-.364-.01-.563-.01-.2 0-.524.074-.8.375-.273.3-.1.173-1.1 2.72-1.1 2.547.828 5.01 1.97 6.54 1.14 1.53 2.98 4.7 6.42 6.18.82.35 1.46.56 1.96.72.825.26 1.575.22 2.167.14.66-.1 1.67-.68 1.9-1.31.23-.63.23-1.17.16-1.28-.07-.1-.258-.2-.54-.34z"/>
-          </svg>
-        </a>
+        <!-- Center Column: Quick Links -->
+        <div class="lg:col-span-4 flex flex-col gap-4">
+          <h3 class="text-xs uppercase tracking-wider text-[#A65A2E] font-bold">Quick Links</h3>
+          <nav aria-label="Footer Sitemap Links">
+            <ul class="grid grid-cols-2 gap-x-4 gap-y-2.5 text-sm">
+              <li>
+                <a href="#" class="text-[#F8F1E8] hover:text-[#D99A2B] transition-all duration-200 inline-block transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#D99A2B] rounded">Home</a>
+              </li>
+              <li>
+                <a href="#menu" class="text-[#F8F1E8] hover:text-[#D99A2B] transition-all duration-200 inline-block transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#D99A2B] rounded">Menu</a>
+              </li>
+              <li>
+                <a href="#about" class="text-[#F8F1E8] hover:text-[#D99A2B] transition-all duration-200 inline-block transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#D99A2B] rounded">About</a>
+              </li>
+              <li>
+                <a href="#testimonials" class="text-[#F8F1E8] hover:text-[#D99A2B] transition-all duration-200 inline-block transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#D99A2B] rounded">Reviews</a>
+              </li>
+              <li>
+                <a href="#contact" class="text-[#F8F1E8] hover:text-[#D99A2B] transition-all duration-200 inline-block transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#D99A2B] rounded">Contact</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- Right Column: Connect -->
+        <div class="lg:col-span-3 flex flex-col gap-4">
+          <h3 class="text-xs uppercase tracking-wider text-[#A65A2E] font-bold">Connect With Us</h3>
+          <div class="flex items-center gap-4">
+            <a href="https://wa.me/917276336896?text=Hi%20IT%20Guy%20Biryani%2C%20I%20would%20like%20to%20order%20premium%20dum%20biryani%20today." 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="w-12 h-12 rounded-full border border-[#FFF9F2]/10 bg-[#FFF9F2]/5 flex items-center justify-center text-[#F8F1E8] hover:text-[#D99A2B] hover:border-[#D99A2B]/40 hover:shadow-[0_0_12px_rgba(217,154,43,0.2)] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#D99A2B]"
+               aria-label="Contact IT Guy Biryani on WhatsApp"
+               title="WhatsApp">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.005 5.224 5.232.002 11.64.002c3.11.002 6.033 1.213 8.232 3.414 2.2 2.2 3.41 5.123 3.41 8.237 0 6.417-5.23 11.64-11.64 11.64-2.005 0-3.974-.521-5.717-1.517L0 24zm6.59-4.846c1.6.95 3.197 1.45 4.987 1.45 5.376 0 9.75-4.37 9.752-9.743.003-2.604-.996-5.053-2.81-6.87-1.815-1.817-4.267-2.812-6.877-2.812-5.38 0-9.75 4.372-9.752 9.744-.002 1.9.497 3.5 1.46 5.093l-.995 3.633 3.73-.975zm10.702-5.28c-.282-.142-1.67-.823-1.93-.916-.258-.093-.446-.142-.633.14-.187.284-.725.918-.89 1.103-.164.183-.327.206-.61.064-.282-.14-.1.173-2.31-1.8-1.72-1.534-2.88-3.43-3.218-4.002-.338-.57-.036-.88.246-1.16.254-.253.564-.656.847-.984.282-.33.376-.563.564-.938.188-.375.094-.703-.047-.984-.14-.28-.63-1.52-.865-2.08-.228-.55-.478-.475-.656-.475-.17-.008-.364-.01-.563-.01-.2 0-.524.074-.8.375-.273.3-.1.173-1.1 2.72-1.1 2.547.828 5.01 1.97 6.54 1.14 1.53 2.98 4.7 6.42 6.18.82.35 1.46.56 1.96.72.825.26 1.575.22 2.167.14.66-.1 1.67-.68 1.9-1.31.23-.63.23-1.17.16-1.28-.07-.1-.258-.2-.54-.34z"/>
+              </svg>
+            </a>
+
+            <a href="https://www.instagram.com/itguybiryani/" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="w-12 h-12 rounded-full border border-[#FFF9F2]/10 bg-[#FFF9F2]/5 flex items-center justify-center text-[#F8F1E8] hover:text-[#D99A2B] hover:border-[#D99A2B]/40 hover:shadow-[0_0_12px_rgba(217,154,43,0.2)] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#D99A2B]"
+               aria-label="Follow IT Guy Biryani on Instagram"
+               title="Instagram">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+          </div>
+        </div>
+
       </div>
-      
-      <!-- Developer signature layout -->
-      <div class="text-center md:text-right font-mono text-[10px] text-[#8C7A70]">
+
+      <!-- Thin Divider -->
+      <div class="h-px bg-[#FFF9F2]/10 w-full"></div>
+
+      <!-- Bottom Bar -->
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[#F8F1E8]/60 font-sans">
         <div>© 2026 IT Guy Biryani. All Rights Reserved.</div>
-        <div class="mt-1">
-          <span class="text-orange font-normal">[</span> RUNTIME_DESIGN: <span class="text-[#241B16] hover:text-orange cursor-pointer">ANTIGRAVITY_SYSTEMS</span> <span class="text-orange">]</span>
+        <div class="flex items-center gap-1.5">
+          <span>Made with ❤️ in Hinjawadi, Pune</span>
         </div>
       </div>
     </div>
