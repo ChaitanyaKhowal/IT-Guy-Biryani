@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initOrderDrawer();
   initContactFormValidation();
   initPremiumReviewsSlider();
+  initSmartFloatingContacts();
 });
 
 /**
@@ -668,4 +669,52 @@ function initPremiumReviewsSlider() {
   // Initial draw trigger
   renderActiveReview();
   startAutoPlay();
+}
+
+/**
+ * Smart Floating Contacts Behavior:
+ * Hides floating buttons when footer is visible (>= 75%) to avoid duplicate actions.
+ */
+function initSmartFloatingContacts() {
+  const container = document.getElementById("floating-contacts-container");
+  const footer = document.getElementById("footer");
+
+  if (!container || !footer) return;
+
+  const threshold = 0.75; // Approximately 75% footer entry
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const isFooterVisible = entry.intersectionRatio >= threshold;
+
+      // Handle system prefers-reduced-motion configuration
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      if (isFooterVisible) {
+        // Smoothly hide
+        container.style.opacity = "0";
+        if (!prefersReducedMotion) {
+          container.style.transform = "translateY(20px)";
+        }
+        container.style.pointerEvents = "none";
+        
+        // Hide child anchors from tab accessibility sequence while hidden
+        container.querySelectorAll("a").forEach(a => a.setAttribute("tabindex", "-1"));
+      } else {
+        // Smoothly show
+        container.style.opacity = "1";
+        if (!prefersReducedMotion) {
+          container.style.transform = "translateY(0)";
+        }
+        container.style.pointerEvents = "auto";
+
+        // Restore tab accessibility sequence
+        container.querySelectorAll("a").forEach(a => a.removeAttribute("tabindex"));
+      }
+    });
+  }, {
+    threshold: [0, threshold]
+  });
+
+  observer.observe(footer);
 }
