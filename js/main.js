@@ -227,16 +227,18 @@ function initMenuManagement() {
       toggle.addEventListener("click", () => {
         // Toggle UI status class rules
         toggles.forEach(t => {
-          t.classList.remove("active", "bg-borderGray", "text-white");
-          t.classList.add("text-muted");
+          t.classList.remove("active", "bg-[#5B4A42]", "text-white");
+          t.classList.add("text-[#8C7A70]");
         });
         
-        toggle.classList.add("active", "bg-borderGray", "text-white");
-        toggle.classList.remove("text-muted");
+        toggle.classList.add("active", "bg-[#5B4A42]", "text-white");
+        toggle.classList.remove("text-[#8C7A70]");
         
-        // Update price based on toggled parameter
+        // Update price display
         const portion = toggle.getAttribute("data-portion");
-        priceDisplay.textContent = `₹${prices[portion]}`;
+        // Normalize lookup keys: data attribute is 500g/1Kg, keys are 500g/1Kg or 500g/1kg
+        const lookupPortion = portion === "1Kg" && !prices["1Kg"] && prices["1kg"] ? "1kg" : portion;
+        priceDisplay.textContent = `₹${prices[lookupPortion]}`;
       });
     });
   });
