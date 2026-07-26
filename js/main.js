@@ -522,6 +522,13 @@ function initPremiumReviewsSlider() {
       review: "The biryani is so perfect that I order it twice every week.",
       monthsAgo: "6 months ago",
       source: "Google Review"
+    },
+    {
+      name: "Chaitanya Khowal",
+      rating: 5,
+      review: "Absolutely loved the experience! The biryani was fresh, flavourful, and tasted just like homemade. The rice was perfectly cooked, the chicken was tender, and the portions were generous. You can really tell it's prepared with care. Definitely ordering again!",
+      monthsAgo: "Just now",
+      source: "Google Review"
     }
   ];
 
