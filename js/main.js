@@ -375,7 +375,16 @@ Address: ${addressInput.value.trim()}
 Please confirm my slot.`;
 
       const redirectUrl = `https://wa.me/${waNumber.replace("+", "")}?text=${encodeURIComponent(messageTemplate)}`;
-      window.open(redirectUrl, "_blank");
+      
+      // Open in a new tab securely and bypass popup blockers
+      const tempLink = document.createElement("a");
+      tempLink.href = redirectUrl;
+      tempLink.target = "_blank";
+      tempLink.rel = "noopener noreferrer";
+      document.body.appendChild(tempLink);
+      tempLink.click();
+      document.body.removeChild(tempLink);
+
       closeDrawer();
       form.reset();
     }
