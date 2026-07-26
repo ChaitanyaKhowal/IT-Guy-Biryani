@@ -442,7 +442,7 @@
           <p class="text-[#5B4A42] mt-2">Select your portion size and spice preference to order.</p>
         </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <!-- Item 1: Chicken Dum Biryani -->
           <div class="glass-card overflow-hidden flex flex-col" data-menu-item data-prices='{"500g": 600, "1Kg": 1200}'>
             <div class="aspect-[4/3] w-full bg-altBg border-b border-borderGray relative overflow-hidden">
@@ -554,6 +554,44 @@
               </div>
               
               <button class="btn-primary w-full mt-4" data-order-button data-item="Chicken Fry Piece Biryani">Order Now</button>
+            </div>
+          </div>
+
+          <!-- Item 4: Chicken Sukhha -->
+          <div class="glass-card overflow-hidden flex flex-col" data-menu-item data-prices='{"500g": 600, "1Kg": 1000}'>
+            <div class="aspect-[4/3] w-full bg-altBg border-b border-borderGray relative overflow-hidden">
+              <span class="absolute top-4 left-4 z-10 font-sans text-[10px] bg-orange/10 border border-orange/30 text-orange px-2.5 py-1 rounded font-semibold uppercase tracking-wider">MAHARASHTRIAN DRY</span>
+              <picture>
+                <source srcset="./assets/images/sukhha-item.avif" type="image/avif">
+                <source srcset="./assets/images/sukhha-item.webp" type="image/webp">
+                <img src="./assets/images/sukhha-item.webp" alt="Authentic Chicken Sukhha prepared with traditional spices" width="400" height="300" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" decoding="async">
+              </picture>
+            </div>
+            <div class="p-6 flex flex-col flex-grow gap-4">
+              <div class="flex justify-between items-start">
+                <h3 class="text-xl font-bold text-[#241B16]">Chicken Sukhha</h3>
+                <span class="text-sm font-bold text-orange font-sans animate-pulse" data-price-display>₹600</span>
+              </div>
+              <p class="text-xs text-[#5B4A42] leading-relaxed flex-grow">
+                Authentic Maharashtrian Chicken Sukhha prepared with traditional spices, slow-cooked until perfectly coated with rich masala.
+              </p>
+              
+              <!-- Toggles / Specifications -->
+              <div class="space-y-3 pt-2">
+                <div class="flex items-center justify-between text-xs">
+                  <span class="text-[#5B4A42]">Portion Size</span>
+                  <div class="flex bg-obsidian border border-borderGray rounded p-0.5">
+                    <button class="px-3 py-1 rounded text-xs font-semibold active bg-[#5B4A42] text-white" data-portion-toggle data-portion="500g">500g</button>
+                    <button class="px-3 py-1 rounded text-xs font-semibold text-[#8C7A70]" data-portion-toggle data-portion="1Kg">1Kg</button>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between text-xs">
+                  <span class="text-[#5B4A42]">Spice Index</span>
+                  <span class="text-[#241B16] font-semibold">Spicy</span>
+                </div>
+              </div>
+              
+              <button class="btn-primary w-full mt-4" data-order-button data-item="Chicken Sukhha">Order Now</button>
             </div>
           </div>
         </div>
