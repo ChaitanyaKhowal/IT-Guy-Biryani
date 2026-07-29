@@ -272,9 +272,6 @@ function initFAQAccordion() {
   });
 }
 
-/**
- * Order Configuration Drawer Operations and WhatsApp Integration
- */
 function initOrderDrawer() {
   const drawer = document.getElementById("order-drawer");
   const overlay = document.getElementById("drawer-overlay");
@@ -286,18 +283,76 @@ function initOrderDrawer() {
   const drawerItemCost = document.getElementById("drawer-item-cost");
   
   const form = document.getElementById("drawer-form");
+
+  // Keep track of the opening trigger button
+  let lastActiveElement = null;
   
-  const openDrawer = (itemName, portion, price) => {
+  const openDrawer = (itemName, portion, price, triggerBtn) => {
+    lastActiveElement = triggerBtn;
     drawerItemName.textContent = itemName;
     drawerItemPortion.textContent = portion;
     drawerItemCost.textContent = `₹${price}`;
     drawer.classList.remove("hidden");
     document.body.classList.add("overflow-hidden");
+
+    // Move focus inside the drawer first focusable element
+    const focusable = getFocusableElements();
+    if (focusable.length > 0) {
+      focusable[0].focus();
+    }
+
+    // Bind keydown events for escape and focus trap
+    document.addEventListener("keydown", handleKeyDown);
   };
   
   const closeDrawer = () => {
     drawer.classList.add("hidden");
     document.body.classList.remove("overflow-hidden");
+    document.removeEventListener("keydown", handleKeyDown);
+
+    // Restore focus to opening button
+    if (lastActiveElement) {
+      lastActiveElement.focus({ preventScroll: true });
+    }
+  };
+
+  const getFocusableElements = () => {
+    return Array.from(drawer.querySelectorAll(
+      'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]'
+    )).filter(el => el.getAttribute('tabindex') !== '-1');
+  };
+
+  const handleKeyDown = (e) => {
+    // 1. Esc Key handling
+    if (e.key === "Escape") {
+      closeDrawer();
+      return;
+    }
+
+    // 2. Focus Trap handling
+    if (e.key === "Tab") {
+      const focusable = getFocusableElements();
+      if (focusable.length === 0) {
+        e.preventDefault();
+        return;
+      }
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (e.shiftKey) {
+        // Shift + Tab (backwards cycling)
+        if (document.activeElement === first) {
+          last.focus();
+          e.preventDefault();
+        }
+      } else {
+        // Tab (forward cycling)
+        if (document.activeElement === last) {
+          first.focus();
+          e.preventDefault();
+        }
+      }
+    }
   };
   
   orderButtons.forEach(btn => {
@@ -309,7 +364,7 @@ function initOrderDrawer() {
       const prices = JSON.parse(card.getAttribute("data-prices"));
       const price = prices[portion];
       
-      openDrawer(itemName, portion, price);
+      openDrawer(itemName, portion, price, btn);
     });
   });
   
