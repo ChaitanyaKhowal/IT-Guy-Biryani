@@ -374,16 +374,10 @@ Address: ${addressInput.value.trim()}
 ------------------------
 Please confirm my slot.`;
 
-      const redirectUrl = `https://wa.me/${waNumber.replace("+", "")}?text=${encodeURIComponent(messageTemplate)}`;
+      const redirectUrl = `https://api.whatsapp.com/send?phone=${waNumber.replace("+", "")}&text=${encodeURIComponent(messageTemplate)}`;
       
-      // Open in a new tab securely and bypass popup blockers
-      const tempLink = document.createElement("a");
-      tempLink.href = redirectUrl;
-      tempLink.target = "_blank";
-      tempLink.rel = "noopener noreferrer";
-      document.body.appendChild(tempLink);
-      tempLink.click();
-      document.body.removeChild(tempLink);
+      // Direct window.open call within the submit call stack is trusted by mobile browsers
+      window.open(redirectUrl, "_blank", "noopener,noreferrer");
 
       closeDrawer();
       form.reset();
@@ -443,12 +437,14 @@ Name: ${nameInput.value.trim()}
 Mobile: ${mobileInput.value.trim()}
 Message: ${messageInput.value.trim()}`;
 
-      const redirectUrl = `https://wa.me/${waNumber.replace("+", "")}?text=${encodeURIComponent(messageText)}`;
+      const redirectUrl = `https://api.whatsapp.com/send?phone=${waNumber.replace("+", "")}&text=${encodeURIComponent(messageText)}`;
+      
+      window.open(redirectUrl, "_blank", "noopener,noreferrer");
+      form.reset();
+      successMsg.classList.remove("hidden");
       setTimeout(() => {
-        window.open(redirectUrl, "_blank");
-        form.reset();
         successMsg.classList.add("hidden");
-      }, 1500);
+      }, 5000);
     }
   });
 }
