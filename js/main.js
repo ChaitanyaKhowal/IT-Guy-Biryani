@@ -417,7 +417,7 @@ function initOrderDrawer() {
     }
     
     if (isValid) {
-      const waNumber = "+917276336896";
+      const waNumber = "+919146750841";
       const messageTemplate = 
 `--- NEW RESERVATION ---
 Item: ${drawerItemName.textContent}
@@ -485,7 +485,7 @@ function initContactFormValidation() {
     
     if (isValid) {
       successMsg.classList.remove("hidden");
-      const waNumber = "+917276336896";
+      const waNumber = "+919146750841";
       const messageText = 
 `--- CONTACT TRANSMISSION ---
 Name: ${nameInput.value.trim()}
